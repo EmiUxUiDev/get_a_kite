@@ -1,6 +1,6 @@
 
 # Get a Kite - Kitesurfing & accessories
-![Partheners](https://github.com/EmiUxUiDev/get_a_Kite/blob/main/Companies.png)
+![Partheners](https://github.com/EmiUxUiDev/get_a_kite/blob/main/public/logo125.png)
 
 Did you think about to get a kitesurf or kiteboard 🏄‍♀️🌞. Well, here we're going to create an ecommerce with all about kitesurfing, accesories and more.
 
@@ -28,7 +28,8 @@ Have you tried to feel to fly and surf at the same time?...try it, try foiling.
 ### DUOTONE
 Visit your web! [DUOTONE](https://www.duotonesports.com/)
 
-
+### F-ONE
+Visit your web! [F-ONE](https://www.f-one.world/)
 
 ### CABRINHA
 Visit your web! [CABRINHA](https://www.cabrinha.com/)
