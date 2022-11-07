@@ -1,4 +1,38 @@
+main{
+    height: 100vh;
+}
+
 .wrapper_section{
-    /* margin-top: 100px; */
-    text-align: center;
+    position: relative;
+    margin: 25% 5%;
+    width: 80%;
+    display: flex;
+    padding: 6rem .5rem 1rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--clr-dark-grey);
+    background-color: var(--light-white-transparent);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--light-white-transparent);
+    border-radius: 15px;
+}
+.main_card_img{
+    transform: rotateY(180deg);
+}
+.wrapper_img{
+    position: absolute;
+    top: -9rem;
+    transform: rotate(-5deg);
+}
+.wrapper_section h4{
+    font-family: var(--font-2);
+    letter-spacing: var(--reg-spacing);
+    font-size: var(--font-size-big);
+    color: #000;
+}
+.wrapper_section p{
+    font-family: var(--font-1);
+    font-size: var(--font-size-mid);
+    letter-spacing: var(--reg-spacing);
+    font-weight: bold;
 }

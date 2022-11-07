@@ -1,12 +1,14 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <body>
       <Navbar />
-      <ItemListContainer />
+      <ItemListContainer subs="Premium" user="Emiliano"/>
+      <Footer />
     </body>
   )
 }
