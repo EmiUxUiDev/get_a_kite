@@ -1,3 +1,23 @@
+
+div .wrapper_cart{
+    display: flex;
+}
+
+.cart-item button{
+    position: absolute;
+    height: 14px;
+    margin-top: -5px;
+    color:var(--clr-primary);
+    font-size: var(--font-size-small);
+    border: none;
+    background-color: #fff;
+    padding-right: 6px;
+    padding-bottom: 16px;
+    padding-left: 4px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
 .cart-icon{
     font-size:1.2rem;
     padding: 0 ;
