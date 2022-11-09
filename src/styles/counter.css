@@ -1,6 +1,6 @@
 #wrapper-counter{
     width: 150px;
-    height: 120px;
+    height: 150px;
     padding: 0.25rem;
     border-radius: var(--rnd-soft);
     margin: 0 auto 2rem auto;
@@ -14,7 +14,7 @@
    font-family: var(--font-2);
 }
 
-#add-btn{
+#add-cart{
     width: 96%;
     margin: 0.5rem 0 0.5rem 0;
     padding: 0.25rem 0;
@@ -38,4 +38,9 @@
     background-color: transparent;
     border: 1px solid var(--clr-mid-grey);
     border-radius: var(--rnd-soft);
+}
+.available{
+    font-family: var(--font-2);
+    font-size: var(--font-size-small);
+    font-weight: 300;
 }
