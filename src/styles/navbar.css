@@ -7,7 +7,7 @@ header{
      border: 1px solid var(--light-white-transparent);
      border-bottom: 1px solid rgba(0, 255, 213, 0.15);
      transition: 0.5s;
-     z-index: 100n;
+     z-index: 100;
 }
 .wrapper_logo{
     font-weight: 700;
@@ -17,8 +17,21 @@ header{
     width: 30px;
     height: 30px;
     cursor:pointer;
+    animation: fly 6s ease-in-out 0s infinite normal none;
 }
+@keyframes fly{
+    0%{
+        opacity: 100%;
+        transform: translate(-20px);
+        
+    }
+    50%{
+        opacity: 60%;
+        transform: translate3d(25px, -5px, 0px) rotate(20deg) scale(0.7);
+    }
 
+    100%{transform: translate(-20px);}
+}
 .wrapper{
     max-width: 800px;
     margin: 0 auto;
@@ -46,4 +59,8 @@ nav li{
     font-weight: 500;
     cursor: pointer;
     letter-spacing: 2px;
+    transition: ease-in 0.2s;
+}
+nav ul li:hover{
+    background-color: rgba(255, 255, 255, 0.65);
 }

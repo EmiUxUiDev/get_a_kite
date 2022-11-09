@@ -1,0 +1,41 @@
+#wrapper-counter{
+    width: 150px;
+    height: 120px;
+    padding: 0.25rem;
+    border-radius: var(--rnd-soft);
+    margin: 0 auto 2rem auto;
+    border: 1px solid var(--clr-mid-grey);
+    text-align: center;
+    font-size: var(--font-size-mid);
+}
+#wrapper-counter p{
+   font-size: var(--font-size-big); 
+   font-weight: bold;
+   font-family: var(--font-2);
+}
+
+#add-btn{
+    width: 96%;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.25rem 0;
+    font-size: var(--font-size-small); 
+    background-color: transparent;
+    border: 1px solid var(--clr-secondary);
+    border-radius: var(--rnd-soft);
+    box-shadow: 1px 1px 2px var( --clr-mid-grey);
+    font-family: var(--font-2);
+}
+.wrapper-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.2rem;
+}
+.wrapper-buttons button{
+    width: 1.5rem;
+    font-size: var(--font-size-mid); 
+    font-family: var(--font-2);
+    background-color: transparent;
+    border: 1px solid var(--clr-mid-grey);
+    border-radius: var(--rnd-soft);
+}

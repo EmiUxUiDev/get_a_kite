@@ -10,11 +10,12 @@ import "../styles/footer.css";
 export default function footer() {
   return (
     <footer>
-
       <div className="wrapper_footer">
-
         <div className="footer_us">
-          <img src="logo125.png" alt="Getakite logo" />
+          <div className="wrapper-logo-img">
+            <a href="#">Getakite</a>
+            <img src="logo125.png" alt="Getakite logo" />
+          </div>
           <p>
             Lorem ipsum dolor sit amet. Cum eveniet dolorum est distinctio
             maxime vel numquam consequatur vel corrupti galisum.
@@ -42,7 +43,6 @@ export default function footer() {
             <TbBrandDiscord /> Discord
           </a>
         </div>
-        
       </div>
       <hr />
       <p className="copyright">copyright 2022 - @emidev</p>

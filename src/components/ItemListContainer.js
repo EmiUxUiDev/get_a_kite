@@ -1,5 +1,7 @@
 import "../styles/itemlistcontainer.css";
 import kite from "../img/dice_cc01.webp";
+import Counter from "./Counter";
+
 export default function ItemListContainer({ user, subs }) {
   return (
     <main>
@@ -15,6 +17,7 @@ export default function ItemListContainer({ user, subs }) {
           will sail on this plataform.
         </p>
       </section>
+      <Counter />
     </main>
   );
 }
