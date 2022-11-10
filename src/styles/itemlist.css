@@ -1,0 +1,7 @@
+.wrapper_list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    background-color: var(--clr-light-grey);
+}
