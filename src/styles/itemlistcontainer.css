@@ -2,7 +2,7 @@
 
 .wrapper_section{
     position: relative;
-    margin: 25% 5% 5% 5%;
+    margin: 25% 5% 4% 5%;
     width: 80%;
     display: flex;
     padding: 6rem .5rem 1rem 1rem;
@@ -12,6 +12,7 @@
     background-color: var(--light-white-transparent);
     backdrop-filter: blur(5px);
     border: 1px solid var(--light-white-transparent);
+    border-bottom: 1px solid var( --light-black-transparent);
     border-radius: 15px;
 }
 .main_card_img{
@@ -26,12 +27,30 @@
     margin-top: 2rem;
     font-family: var(--font-2);
     letter-spacing: var(--reg-spacing);
-    font-size: var(--font-size-big);
-    color: #000;
+    font-size: var(--font-size-mid);
+    color: var(--clr-dark-grey);
 }
 .wrapper_section p{
-    font-family: var(--font-1);
-    font-size: var(--font-size-mid);
+    font-family: var(--font-2);
+    font-size: var(--font-size-small);
     letter-spacing: var(--reg-spacing);
-    font-weight: bold;
+
+}
+
+main h3{
+    text-align: center;
+    font-family: var(--font-2);
+    letter-spacing: var(--xwide-spacing);
+    text-transform: capitalize;
+    font-size: var(--font-size-reg);
+    color: var(--clr-dark-grey);
+}
+.big-text {
+    color: #000;
+    font-size: var(--font-size-xbig);
+    letter-spacing: var(--xwide-spacing);
+}
+h4 b{
+    color: var(--clr-primary);
+    font-size: var(--font-size-xbig);
 }

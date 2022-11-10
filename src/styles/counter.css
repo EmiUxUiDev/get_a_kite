@@ -1,6 +1,7 @@
 #wrapper-counter{
     width: 150px;
     height: 150px;
+    background-color: #fff;
     padding: 0.25rem;
     border-radius: var(--rnd-soft);
     margin: 0 auto 2rem auto;

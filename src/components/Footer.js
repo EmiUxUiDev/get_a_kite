@@ -1,9 +1,9 @@
 import React from "react";
-import { MdLocationOn, MdMailOutline, MdPhone } from "react-icons/md";
 import {
   TbBrandTwitter,
   TbBrandInstagram,
   TbBrandDiscord,
+  TbBrandWhatsapp
 } from "react-icons/tb";
 import "../styles/footer.css";
 
@@ -45,7 +45,7 @@ export default function footer() {
         </div>
       </div>
       <hr />
-      <p className="copyright">copyright 2022 - @emidev</p>
+      <p className="copyright">copyright 2022 - @emidev - <TbBrandWhatsapp /> +54 9 351 3441306</p>
     </footer>
   );
 }
