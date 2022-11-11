@@ -15,7 +15,7 @@ const kiteboards = [
   },
   {
     id:"02",
-    name:"Cabrinha fx02",
+    name:"Cabrinha fx03",
     description: "Free style kite fx03",
     stock: 5,
     img: "assets/cabrinha_fx03.webp"
@@ -103,12 +103,27 @@ const kiteboards = [
     description: "Free style surfing and waves",
     stock: 4,
     img: "assets/bandit_s4_01.png"
+  },
+  {
+    id:"15",
+    name:"Bandit",
+    description: "Free style surfing waves and shores",
+    stock: 8,
+    img: "assets/bandit_cc3.png"
+  },
+  {
+    id:"16",
+    name:"Dice",
+    description: "Free style surfing waves and big air",
+    stock: 5,
+    img: "assets/dice_cc01.webp"
   }
   
 ]
 
 export default function ItemListContainer({ user, subs }) {
   const [prods, setProds] = useState([])
+
 
   const prodList = new Promise((resolve)=>{
     setTimeout(()=>{

@@ -3,9 +3,9 @@
     height: 150px;
     background-color: #fff;
     padding: 0.25rem;
-    border-radius: var(--rnd-soft);
+    border-radius: var(--rnd-med);
     margin: 0 auto 2rem auto;
-    border: 1px solid var(--clr-mid-grey);
+    box-shadow: 0px 0px 2px var(--grey-transparent);
     text-align: center;
     font-size: var(--font-size-mid);
 }

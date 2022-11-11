@@ -40,14 +40,46 @@ header{
     align-items: center;
     padding: 0 1rem;
 }
+nav ul li ul li{list-style: none;}
 
-nav ul{
+#first_ul{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
     cursor:pointer;
+}
+
+#wrapper_kite{
+    position:relative;
+}
+
+#sub_kite{
+    position:absolute;
+    display: none;
+    margin-top: 1.1rem;
+    margin-left: -1.5rem;
+    text-align: center;
+    padding: 4px 0 4px 0;
+}
+
+#sub_kite > li:hover{
+    transition: 100ms;
+    transform: scale(1.05);
+    background-color:  #fff;
+}
+
+#wrapper_kite:hover > #sub_kite{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--light-white-transparent);
+    border-bottom: 1px solid rgba(0, 255, 213, 0.15);
+}
+
+#wrapper_kite:hover ul li {
+    color:var(--clr-dark-grey);
 }
 
 nav li{

@@ -1,11 +1,20 @@
 import React from "react";
-import "../styles/item.css"
-export default function Item({ kiteboard }) {
+import "../styles/item.css";
+
+
+export default function Item({ kiteboard, index }) {
+
   return (
-    <div id="item_wrapper">
-      <img className="item_img" src={kiteboard.img} alt={`Description img ${kiteboard.id}`} />
-      <li>{kiteboard.name}</li>
+    <li id="item_wrapper" key={index}>
+      <img
+        className="item_img"
+        src={kiteboard.img}
+        alt={`Description img ${kiteboard.id}`}
+      />
+
+      <p id="subject">{kiteboard.name}</p>
+
       <p className="item-available">Available: {kiteboard.stock}</p>
-    </div>
+    </li>
   );
 }

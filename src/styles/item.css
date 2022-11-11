@@ -30,8 +30,14 @@
     padding-bottom: 0.2rem;
 }
 
+#subject{
+    font-size: var(--font-size-reg);
+    font-weight: bold;
+}
+
 .item-available{
     font-family: var(--font-2);
     font-size: var(--font-size-small);
     color: var(--clr-dark-grey);
+    padding-bottom: 0.1rem;
 }
