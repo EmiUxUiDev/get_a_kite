@@ -43,6 +43,8 @@ div .footer_us{
     font-weight: 700;
 }
 
+.social{margin:0 1rem;}
+
 div .footer_nav, .social{
     display: flex;
     flex-direction: column;
@@ -58,7 +60,6 @@ div .footer_nav a, .social a{
     letter-spacing: var(--reg-spacing);
 }
 
-
 .copyright{
     text-align: center;
     font-family: var(--font-2);
@@ -67,3 +68,30 @@ div .footer_nav a, .social a{
     padding-bottom: 0.25rem;
 }
 
+@media screen and (max-width: 560px){
+ 
+footer{
+    display: flex;
+    flex-direction: column;
+    }
+.wrapper_footer{
+    height: 420px;
+    flex-direction: column;
+    
+}
+.footer_us{
+    margin-bottom: 1rem;
+}
+  
+div .footer_nav, .social{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;  
+}
+
+div .footer_nav a, .social a {
+    letter-spacing: var(--wide-spacing);
+    padding: 0.3rem;
+}
+}

@@ -111,3 +111,27 @@ nav li{
 nav ul li:hover{
     background-color: rgba(255, 255, 255, 0.65);
 }
+
+@media screen and (max-width: 560px){
+    .wrapper_logo{
+        font-weight: bold;
+        width: 110px;
+        
+    }
+    
+    .logo{
+        width: 25px;
+        height: 25px;
+        cursor:pointer;
+        animation: fly 6s ease-in-out 0s infinite normal none;
+    }
+    nav li{
+        margin: 0.05rem 0.25rem;
+        padding: 0.5rem;
+        font-size: var(--font-size-xsmall);
+        font-weight: 500;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: ease-in 0.2s;
+    }
+}

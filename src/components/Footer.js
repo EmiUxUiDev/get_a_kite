@@ -44,8 +44,9 @@ export default function footer() {
           </a>
         </div>
       </div>
-      <hr />
+      <hr/>
       <p className="copyright">copyright 2022 - @emidev - <TbBrandWhatsapp /> +54 9 351 3441306</p>
+      
     </footer>
   );
 }

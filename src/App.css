@@ -11,3 +11,10 @@ body{
   background-repeat: no-repeat;
   background-color: var(--clr-light-grey);
 }
+
+
+@media screen and (max-width: 560px){
+  body{
+    background-size: 240vw;
+  }
+}

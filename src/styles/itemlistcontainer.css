@@ -18,6 +18,7 @@
 
 .main_card_img{
     transform: rotateY(180deg);
+    
 }
 .wrapper_img{
     position: absolute;
@@ -54,4 +55,41 @@ main h3{
 h4 b{
     color: var(--clr-primary);
     font-size: var(--font-size-xbig);
+}
+
+@media screen and (max-width: 560px){
+    .wrapper_section{
+        margin: 25% 0 4% 0;
+        width: 100%;
+        padding: 6rem .5rem 1rem 0.5rem;
+    }
+    .wrapper_img{
+        top: -4rem;
+    }
+    .main_card_img{
+        width: 160px;
+    } 
+    .wrapper_section h4{
+        margin-top: -1rem;
+        letter-spacing: var(--reg-spacing);
+        font-size: var(--font-size-small);
+    }
+    .sub-user {
+        color: var(--clr-primary);
+        font-size: var(--font-size-big);
+    }
+    .wrapper_section p{
+        font-size: var(--font-size-xsmall);
+        letter-spacing: var(--reg-spacing);
+    }
+    .big-text {
+        font-size: var(--font-size-big);
+        letter-spacing: var(--xwide-spacing);
+    }
+    
+    main h3{ 
+        text-transform:capitalize;
+        font-size: var(--font-size-small);
+        margin-bottom: -1rem;
+    }
 }
