@@ -19,7 +19,14 @@ export default function Navbar() {
               <li>Drift</li>
             </ul>
           </li>
-          <li>BOARDS</li>
+          <li id="wrapper_board">
+            BOARDS
+            <ul id="sub_board">
+              <li>Kiteboarding</li>
+              <li>Kitesurfing</li>
+              <li>Foil</li>
+            </ul>
+          </li>
           <li>FOILS</li>
           <li>WINGS</li>
         </ul>

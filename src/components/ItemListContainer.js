@@ -10,6 +10,7 @@ const kiteboards = [
     id:"01",
     name:"Cabrinha fx01",
     description: "Free style kite fx01",
+    price:2050,
     stock: 3,
     img: "assets/cabrinha_fx01.webp"
   },
@@ -17,6 +18,7 @@ const kiteboards = [
     id:"02",
     name:"Cabrinha fx03",
     description: "Free style kite fx03",
+    price:2150,
     stock: 5,
     img: "assets/cabrinha_fx03.webp"
   },
@@ -24,6 +26,7 @@ const kiteboards = [
     id:"03",
     name:"Tronic",
     description: "Free style board",
+    price:550,
     stock: 2,
     img: "assets/tronic.webp"
   },
@@ -31,6 +34,7 @@ const kiteboards = [
     id:"04",
     name:"Xcal Carbon",
     description: "Free style carbon board",
+    price:680,
     stock: 2,
     img: "assets/xcalCarbon.webp"
   },
@@ -38,6 +42,7 @@ const kiteboards = [
     id:"05",
     name:"Foilwing Mantis 03",
     description: "Foilwing Cabrinha window ",
+    price:720,
     stock: 7,
     img: "assets/foilwing03.webp"
   },
@@ -45,6 +50,7 @@ const kiteboards = [
     id:"06",
     name:"Foilwing Mantis 04",
     description: "Foilwing Cabrinha window",
+    price:1250,
     stock: 0,
     img: "assets/foilwing04.webp"
   },
@@ -52,6 +58,7 @@ const kiteboards = [
     id:"07",
     name:" Fusion carbon",
     description: "Entire carbon foil",
+    price:860,
     stock: 8,
     img: "assets/fusion.webp"
   },
@@ -59,6 +66,7 @@ const kiteboards = [
     id:"08",
     name:"Slick SLS 01",
     description: "Foilwing Cabrinha windowless",
+    price:2200,
     stock: 4,
     img: "assets/slick_sls01.webp"
   },
@@ -66,6 +74,7 @@ const kiteboards = [
     id:"09",
     name:"Slick SLS 03 xTreme",
     description: "Foilwing Cabrinha windowless",
+    price:2870,
     stock: 1,
     img: "assets/slick_sls03.webp"
   },
@@ -73,6 +82,7 @@ const kiteboards = [
     id:"10",
     name:"Spirit Carve",
     description: "Shore ",
+    price:2540,
     stock: 4,
     img: "assets/spirit_carve.webp"
   },
@@ -80,6 +90,7 @@ const kiteboards = [
     id:"11",
     name:"Spirit Gt",
     description: "Drifter foil",
+    price:3100,
     stock: 8,
     img: "assets/spirit_gt.webp"
   },
@@ -87,6 +98,7 @@ const kiteboards = [
     id:"12",
     name:"Neo D Lab",
     description: "For kitesurfing, drive the waves ",
+    price:1505,
     stock: 3,
     img: "assets/neo_d_lab.webp"
   },
@@ -94,6 +106,7 @@ const kiteboards = [
     id:"13",
     name:"Bullit v02",
     description: "Free surfing and waves",
+    price:1800,
     stock: 2,
     img: "assets/bullit_v02.png"
   },
@@ -101,6 +114,7 @@ const kiteboards = [
     id:"14",
     name:"Bandit s4",
     description: "Free style surfing and waves",
+    price:2150,
     stock: 4,
     img: "assets/bandit_s4_01.png"
   },
@@ -108,6 +122,7 @@ const kiteboards = [
     id:"15",
     name:"Bandit",
     description: "Free style surfing waves and shores",
+    price:2560,
     stock: 8,
     img: "assets/bandit_cc3.png"
   },
@@ -115,6 +130,7 @@ const kiteboards = [
     id:"16",
     name:"Dice",
     description: "Free style surfing waves and big air",
+    price:2205,
     stock: 5,
     img: "assets/dice_cc01.webp"
   }
