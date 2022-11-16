@@ -1,27 +1,33 @@
 #wrapper-counter{
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 0.25rem;
-    border-radius: var(--rnd-med);
-    margin: 0 auto 2rem auto;
-    box-shadow: 0px 0px 2px var(--grey-transparent);
+    border-radius: var(--rnd-soft);
     text-align: center;
     font-size: var(--font-size-mid);
 }
 #wrapper-counter p{
-   font-size: var(--font-size-big); 
-   font-weight: bold;
+   font-size: var(--font-size-mid); 
    font-family: var(--font-2);
 }
+#wrapper-counter h5{
+    text-align: left;
+    font-family: var(--font-2);
+    font-weight: 300;
+    font-size: var(--font-size-small);
+    letter-spacing: var(--reg-spacing);
+    padding: 0.2rem 0;
+ }
 
 #add-cart{
-    width: 96%;
+    width: 100%;
     margin: 0.5rem 0 0.5rem 0;
-    padding: 0.25rem 0;
+    padding: 0.35rem 0;
     font-size: var(--font-size-small); 
     background-color: transparent;
-    border: 1px solid var(--clr-secondary);
+    border: 1px solid var(--clr-mid-grey);
     border-radius: var(--rnd-soft);
     box-shadow: 1px 1px 2px var( --clr-mid-grey);
     font-family: var(--font-2);
@@ -30,10 +36,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.2rem;
+    padding-top: 0.2rem;
 }
 .wrapper-buttons button{
-    width: 1.5rem;
+    width: 5rem;
     font-size: var(--font-size-mid); 
     font-family: var(--font-2);
     background-color: transparent;
@@ -43,5 +49,8 @@
 .available{
     font-family: var(--font-2);
     font-size: var(--font-size-small);
-    font-weight: 300;
+    padding: 0.1rem 0.2rem;
+    text-align: right;
+    color: var(--clr-dark-grey);
+    background-color: var(--clr-secondary);
 }

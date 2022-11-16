@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 const user = {
   id: "0",

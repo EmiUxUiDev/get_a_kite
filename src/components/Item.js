@@ -3,19 +3,19 @@ import "../styles/item.css";
 import { TbTruckDelivery } from "react-icons/tb";
 
 export default function Item({ kiteboard, index }) {
-  return kiteboard.price >= 1500 ? (
+   return (
+    kiteboard.price >= 1500 ?
     <li id="item_wrapper" key={index}>
       <img
         className="item_img"
-        src={kiteboard.img}
+        src={kiteboard.path}
         alt={`Description img ${kiteboard.id}`}
       />
-
+      <div className="line"></div>
       <section className="wrapper-text">
-        <div className="line"></div>
 
         <div className="wrapper-info">
-          <p id="subject">{kiteboard.name}</p>
+          <p id="subject">{kiteboard.model}</p>
           <p id="price">{`U$S ${kiteboard.price}`}</p>
           <p className="item-available">Available: {kiteboard.stock}</p>
         </div>
@@ -28,18 +28,17 @@ export default function Item({ kiteboard, index }) {
         </div>
       </section>
     </li>
-  ) : (
+  : 
     <li id="item_wrapper" key={index}>
       <img
         className="item_img"
-        src={kiteboard.img}
+        src={kiteboard.path}
         alt={`Description img ${kiteboard.id}`}
       />
+      <div className="line"></div>
       <section className="wrapper-text">
-        <div className="line"></div>
-
         <div className="wrapper-info">
-          <p id="subject">{kiteboard.name}</p>
+          <p id="subject">{kiteboard.model}</p>
           <p id="price">{`U$S ${kiteboard.price}`}</p>
           <p className="item-available">Available: {kiteboard.stock}</p>
         </div>

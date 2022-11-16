@@ -7,7 +7,7 @@ header{
      border: 1px solid var(--light-white-transparent);
      border-bottom: 1px solid rgba(0, 255, 213, 0.15);
      transition: 0.5s;
-     z-index: 100;
+     z-index: 1000;
 }
 .wrapper_logo{
     font-weight: 700;
@@ -38,10 +38,14 @@ header{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0.3rem 1rem;
 }
 nav ul li ul li{list-style: none;}
 
+.first:hover{
+    transition: 100ms;
+    background-color:  #fff;
+}
 #first_ul{
     display: flex;
     justify-content: center;
@@ -55,24 +59,30 @@ nav ul li ul li{list-style: none;}
     position:relative;
 }
 
-#sub_kite, #sub_board{
+ #sub_kite, #sub_board{
     position:absolute;
     display: none;
-    margin-top: 1.1rem;
-    margin-left: -1.5rem;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
     text-align: center;
-    padding: 4px 0;
+    padding: 10px 5px;
+    border-radius: var(--rnd-soft);
 }
 
 #sub_kite > li, #sub_board > li{
     height: 32px;
-    padding-top:8px;
+    font-family: var(--font-2);
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    letter-spacing: var(--mid-spacing);
+    padding: 8px 2px 0 2px;
 }
 
 #sub_kite > li:hover, #sub_board > li:hover{
     transition: 100ms;
     transform: scale(1.05);
     background-color:  #fff;
+    border-radius: var(--rnd-soft);
 }
 
 #wrapper_kite:hover > #sub_kite{
@@ -91,12 +101,12 @@ nav ul li ul li{list-style: none;}
     border-bottom: 1px solid rgba(0, 255, 213, 0.15);
 }
 
-#wrapper_kite:hover ul li, #wrapper_board:hover ul li {
+#wrapper_kite :hover ul li a, #wrapper_board :hover ul li a{
     color:var(--clr-dark-grey);
-    border-radius: var(--rnd-soft);
+    /* border-radius: var(--rnd); */
 }
 
-nav li{
+nav li a{
     margin: 0.1rem 0.5rem;
     padding: 1rem;
     border-radius: var(--rnd-soft);
@@ -104,13 +114,12 @@ nav li{
     font-family: var(--font-2);
     font-size: 0.8rem;
     font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
     letter-spacing: 2px;
     transition: ease-in 0.2s;
 }
-nav ul li:hover{
-    background-color: rgba(255, 255, 255, 0.65);
-}
+
 
 @media screen and (max-width: 560px){
     .wrapper_logo{
@@ -125,7 +134,7 @@ nav ul li:hover{
         cursor:pointer;
         animation: fly 6s ease-in-out 0s infinite normal none;
     }
-    nav li{
+    nav li a{
         margin: 0.05rem 0.25rem;
         padding: 0.5rem;
         font-size: var(--font-size-xsmall);
@@ -133,5 +142,13 @@ nav ul li:hover{
         cursor: pointer;
         letter-spacing: 2px;
         transition: ease-in 0.2s;
+    }
+
+    #sub_kite, #sub_board{
+        margin-top: 0.5rem;
+        border-radius: var(--rnd-soft);
+    }
+    #sub_kite > li a, #sub_board > li a{
+        font-size: var(--font-size-small);
     }
 }

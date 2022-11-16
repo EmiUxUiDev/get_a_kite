@@ -12,23 +12,23 @@ export default function Navbar() {
 
         <ul id="first_ul">
           <li id="wrapper_kite">
-            KITES
+            <a className="first" href="#">KITES</a>
             <ul id="sub_kite">
-              <li>Freestyle</li>
-              <li>Big air</li>
-              <li>Drift</li>
+              <li><a href="#">Freestyle</a></li>
+              <li><a href="#">Big air</a></li>
+              <li><a href="#">Drift</a></li>
             </ul>
           </li>
           <li id="wrapper_board">
-            BOARDS
+            <a className="first" href="#">BOARDS</a> 
             <ul id="sub_board">
-              <li>Kiteboarding</li>
-              <li>Kitesurfing</li>
-              <li>Foil</li>
+              <li><a href="#">Kiteboarding</a></li>
+              <li><a href="#">Kitesurfing</a></li>
+              <li><a href="#">Foil</a></li>
             </ul>
           </li>
-          <li>FOILS</li>
-          <li>WINGS</li>
+          <li><a className="first" href="#">FOILS</a> </li>
+          <li><a className="first" href="#">WINGS</a> </li>
         </ul>
         <CartWidget />
       </nav>
