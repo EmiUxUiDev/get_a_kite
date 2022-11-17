@@ -174,7 +174,6 @@ export default function ItemListContainer({ user, subs }) {
         <p className="big-text">GetAKite</p>online store{" "}
       </h3>
       <ItemList prods={prods} />
-      <ItemDetailContainer />
     </main>
   );
 }

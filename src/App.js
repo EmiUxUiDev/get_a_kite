@@ -1,8 +1,7 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer'
-import Footer from './components/Footer'
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Layout from "./components/Layout"
+import ItemListContainer from "./components/ItemListContainer"
+
 
 const user = {
   id: "0",
@@ -12,11 +11,10 @@ const user = {
 
 function App() {
   return (
-    <body>
-      <Navbar />
-      <ItemListContainer subs={user.subs} user={user.name}/>
-      <Footer />
-    </body>
+    
+      <Layout>
+          <ItemListContainer subs={user.subs} user={user.name}/> 
+      </Layout>
   )
 }
 

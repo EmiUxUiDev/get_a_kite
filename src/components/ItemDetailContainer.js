@@ -32,7 +32,7 @@ export default function ItemDetailContainer() {
     fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
       .then((data) => data.json())
       .then((data) => {
-        const result = data.filter((item) => item.id === 21);
+        const result = data.filter((item) => item.id === 24);
         console.log(result);
         setItem(result);
       })

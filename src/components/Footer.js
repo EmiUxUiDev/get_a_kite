@@ -6,6 +6,7 @@ import {
   TbBrandWhatsapp
 } from "react-icons/tb";
 import "../styles/footer.css";
+import logo125 from "../img/logo125.png"
 
 export default function footer() {
   return (
@@ -14,7 +15,7 @@ export default function footer() {
         <div className="footer_us">
           <div className="wrapper-logo-img">
             <a href="#">Getakite</a>
-            <img src="logo125.png" alt="Getakite logo" />
+            <img src={logo125} alt="Getakite logo" />
           </div>
           <p>
             Lorem ipsum dolor sit amet. Cum eveniet dolorum est distinctio
