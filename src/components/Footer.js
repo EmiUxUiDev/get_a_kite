@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import {
   TbBrandTwitter,
   TbBrandInstagram,
@@ -14,7 +15,7 @@ export default function footer() {
       <div className="wrapper_footer">
         <div className="footer_us">
           <div className="wrapper-logo-img">
-            <a href="#">Getakite</a>
+            <Link to={"/"}>GetAKite</Link>
             <img src={logo125} alt="Getakite logo" />
           </div>
           <p>

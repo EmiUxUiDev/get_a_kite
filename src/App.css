@@ -6,7 +6,7 @@
 }
 body{
   height: 100vh;
-  background-image: url(./img/Kiteboarding_overview.webp);
+  background-image: url('./img/Kiteboarding_overview.webp');
   background-size:contain;
   background-repeat: no-repeat;
   background-color: var(--clr-light-grey);

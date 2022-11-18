@@ -9,6 +9,10 @@ header{
      transition: 0.5s;
      z-index: 1000;
 }
+#link{
+    text-decoration: none;
+    color: #000;
+}
 .wrapper_logo{
     font-weight: 700;
 }

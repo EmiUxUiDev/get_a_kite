@@ -9,13 +9,12 @@ const user = {
   subs: "Premium"
 }
 
-function App() {
+export default function App() {
   return (
-    
       <Layout>
           <ItemListContainer subs={user.subs} user={user.name}/> 
       </Layout>
   )
 }
 
-export default App;
+

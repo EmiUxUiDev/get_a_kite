@@ -4,7 +4,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 
 export default function Item({ kiteboard, index }) {
    return (
-    kiteboard.price >= 1500 ?
+    kiteboard.price >= 1001 ?
     <li id="item_wrapper" key={index}>
       <img
         className="item_img"
