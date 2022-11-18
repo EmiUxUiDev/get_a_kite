@@ -2,10 +2,10 @@
 
 section.wrapper_section{
     position: relative;
-    margin: 20% 5% 4% 5%;
+    margin: -10% 5% 2% 5%;
     width: 80%;
     display: flex;
-    padding: 6rem .5rem 1rem 1rem;
+    padding: 8rem .5rem 1rem 1rem;
     flex-direction: column;
     align-items: flex-start;
     color: var(--clr-dark-grey);
@@ -50,11 +50,20 @@ main h3{
     text-transform: capitalize;
     font-size: var(--font-size-reg);
     color: var(--clr-dark-grey);
+    margin-bottom: 1rem;
 }
-.big-text {
+.wrapper_section .big-text {
+    position: absolute;
     color: #000;
-    font-size: var(--font-size-xbig);
+    font-size: 90px;
+    font-family: var(--font-1);
+    font-weight: bold;
     letter-spacing: var(--xwide-spacing);
+    top: 3rem;
+    left: 12rem;
+    /* transform: rotate(-5deg); */
+    filter: drop-shadow(6px 6px 2px #fff);
+    
 }
 h4 b{
     color: var(--clr-primary);
@@ -86,9 +95,18 @@ h4 b{
         font-size: var(--font-size-xsmall);
         letter-spacing: var(--reg-spacing);
     }
-    .big-text {
-        font-size: var(--font-size-big);
+    .wrapper_section .big-text {
+        position: absolute;
+        color: #000;
+        font-size: var(--font-size-xbig);
+        font-family: var(--font-1);
+        font-weight: bold;
         letter-spacing: var(--xwide-spacing);
+        top: 2rem;
+        left: 5rem;
+        /* transform: rotate(-5deg); */
+        filter: drop-shadow(5px -4px 2px var(--clr-mid-grey));
+        
     }
     
     main h3{ 

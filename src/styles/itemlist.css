@@ -2,6 +2,26 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 2rem 0;
-    background-color: var(--clr-light-grey);
+    margin: 1.5rem 0 0 0;
+    background-color: transparent;
+}
+h2#category-title{
+    position: absolute;
+    top: 4rem;
+    left: 0.5rem;
+    font-size: var(--font-size-small);
+    font-family: var(--font-2);
+    font-weight: 300;
+    letter-spacing: var(--mid-spacing);
+    text-transform: uppercase;
+    color: #fff;
+    filter: drop-shadow(4px 4px 2px #000);
+}
+
+@media screen and (max-width: 560px){
+
+    h2#category-title{
+        font-size: var(--font-size-xsmall);
+    }
+
 }

@@ -1,4 +1,15 @@
 #espacio{
-    margin-top: 400px;
-    border: none;
+    width: 100vw;
+    height: 400px;
+    text-align: center;
+    background-size: cover;
+    background-position-y:70%;
+    background-repeat: no-repeat;
+    margin-top: -4rem;
+}
+
+@media screen and (max-width: 560px){
+    #espacio{
+        height: 250px;
+    }
 }

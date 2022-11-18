@@ -160,6 +160,7 @@ export default function ItemListContainer({ user, subs }) {
         <div className="wrapper_img">
           <img className="main_card_img" src={kite} alt="Kite cabrinha" />
         </div>
+        <p className="big-text">GetAKite</p>
         <h4>
           Subscription: <b className="sub-user">{subs}</b> - Hey <b className="sub-user">{user}</b>, welcome to our
           platafform!
@@ -171,7 +172,7 @@ export default function ItemListContainer({ user, subs }) {
       </section>
       
       <h3>
-        <p className="big-text">GetAKite</p>online store{" "}
+        online store{" "}
       </h3>
       <ItemList prods={prods} />
     </main>

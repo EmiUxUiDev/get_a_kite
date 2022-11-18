@@ -3,11 +3,16 @@ import Layout from "../components/Layout";
 import ItemList from "../components/ItemList";
 import { useParams } from "react-router-dom";
 import "../styles/category.css";
+import def from "../img/Kiteboarding_overview.webp"
+import kite from "../img/kite.webp"
+import board from "../img/board.png"
+import foil from "../img/foil.webp"
+import wing from "../img/wings.png"
 
 export default function CategoryView() {
   const { categoryName } = useParams();
   const [items, setItems] = useState([]);
- 
+  const [bkgImg, setBkgImg] = useState('');
 
   useEffect(() => {
     fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
@@ -18,12 +23,30 @@ export default function CategoryView() {
         setItems(result);
       })
       .catch((error) => console.log(error));
-  }, [categoryName]);
 
+      switch(categoryName){
+        case 'kite':
+          setBkgImg(kite)
+        break
+        case 'board':
+          setBkgImg(board)
+        break
+        case 'Foil':
+          setBkgImg(foil)
+        break
+        case 'Wing':
+          setBkgImg(wing)
+        break
+        default:
+          setBkgImg(def)
+      }
+  }, [categoryName]);
+  console.log(bkgImg)
   return (
     <Layout>
-      <div id="espacio"></div>
+      <div id="espacio" style={{ backgroundImage: `url(${bkgImg})` }}></div>
       <ItemList prods={items} />
     </Layout>
   );
 }
+
