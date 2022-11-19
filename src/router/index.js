@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 //Importo los componentes 
 import CategoryView from "../views/Category";
+import CategoryViewStyle from "../views/CategoryStyle";
 import ItemView from "../views/Item";
 
 
@@ -19,7 +20,15 @@ export const router = createBrowserRouter([
         element: <CategoryView />,
     },
     {
-        path: "/item/:id",
+        path: "/category/kite/:kiteStyleName",
+        element: <CategoryViewStyle />,
+    },
+    {
+        path: "/category/board/:boardStyleName",
+        element: <CategoryViewStyle />,
+    },
+    {
+        path: "/item/:idDetail",
         element: <ItemView />,
     },
 ])

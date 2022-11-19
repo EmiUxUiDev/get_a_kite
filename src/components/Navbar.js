@@ -21,13 +21,16 @@ export default function Navbar() {
             </Link>
             <ul id="sub_kite">
               <li>
-                <a href="#">Freestyle</a>
+                <Link to={"/category/kite/Freestyle"}>Freestyle</Link>
               </li>
               <li>
-                <a href="#">Big air</a>
+              <Link to={"/category/kite/Big air"}>Big air</Link>
               </li>
               <li>
-                <a href="#">Drift</a>
+              <Link to={"/category/kite/Freeride"}>Freeride</Link>
+              </li>
+              <li>
+              <Link to={"/category/kite/Speed"}>Speed</Link>
               </li>
             </ul>
           </li>
@@ -37,13 +40,16 @@ export default function Navbar() {
             </Link>
             <ul id="sub_board">
               <li>
-                <a href="#">Kiteboarding</a>
+              <Link to={"/category/board/Freestyle"}>Freestyle</Link>
               </li>
               <li>
-                <a href="#">Kitesurfing</a>
+              <Link to={"/category/board/Freeride"}>Freeride</Link>
               </li>
               <li>
-                <a href="#">Foil</a>
+              <Link to={"/category/board/Surfing"}>Surfing</Link>
+              </li>
+              <li>
+              <Link to={"/category/board/Foil"}>Foil</Link>
               </li>
             </ul>
           </li>

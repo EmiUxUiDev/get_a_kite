@@ -2,7 +2,6 @@ import "../styles/itemlistcontainer.css";
 import kite from "../img/dice_cc01.webp";
 import { useState } from "react";
 import ItemList from "./ItemList";
-import ItemDetailContainer from "./ItemDetailContainer";
 
 
 // const kiteboards = [

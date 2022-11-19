@@ -11,9 +11,9 @@ import ItemDetail from "./ItemDetail";
 //     img: "./assets/tronic.webp"
 //   }
 
-export default function ItemDetailContainer() {
+export default function ItemDetailContainer({idDetail}) {
   const [item, setItem] = useState("");
-
+  console.log(idDetail);
   // useEffect(()=>{
   //     new Promise((resolve)=>{
   //         setTimeout(()=>{
@@ -32,12 +32,12 @@ export default function ItemDetailContainer() {
     fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
       .then((data) => data.json())
       .then((data) => {
-        const result = data.filter((item) => item.id === 24);
+        const result = data.filter((item) => item.id === Number(idDetail));
         console.log(result);
         setItem(result);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [idDetail]);
 
   return (
     item != "" ?

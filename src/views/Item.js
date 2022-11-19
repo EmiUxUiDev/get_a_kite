@@ -1,11 +1,15 @@
 import React from 'react'
-import Item from '../components/Item'
 import Layout from '../components/Layout'
+import ItemDetailContainer from '../components/ItemDetailContainer'
+import { useParams } from 'react-router-dom'
+
 
 export default function ItemView() {
+const {idDetail} = useParams()
+
   return ( 
     <Layout>
-      <Item />
+      <ItemDetailContainer idDetail={idDetail}/>
     </Layout>
   )
 }

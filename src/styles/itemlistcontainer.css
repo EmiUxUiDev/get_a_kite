@@ -72,7 +72,7 @@ h4 b{
 
 @media screen and (max-width: 560px){
     section.wrapper_section{
-        margin: 40% 0 4% 5%;
+        margin: -5rem 0 4% 5%;
         width: 80%;
         padding: 6rem .5rem 1rem 0.5rem;
     }

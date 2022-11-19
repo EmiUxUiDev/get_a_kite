@@ -1,13 +1,13 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   TbBrandTwitter,
   TbBrandInstagram,
   TbBrandDiscord,
-  TbBrandWhatsapp
+  TbBrandWhatsapp,
 } from "react-icons/tb";
 import "../styles/footer.css";
-import logo125 from "../img/logo125.png"
+import logo125 from "../img/logo125.png";
 
 export default function footer() {
   return (
@@ -25,13 +25,21 @@ export default function footer() {
         </div>
 
         <div className="footer_nav">
-          <a href="#">Kites</a>
+          <Link to={"/category/kite"}>
+            <a>Kites</a>
+          </Link>
 
-          <a href="#">Boards</a>
+          <Link to={"/category/board"}>
+            <a>Boards</a>
+          </Link>
 
-          <a href="#">Foils</a>
+          <Link to={"/category/Foil"}>
+            <a>Foils</a>
+          </Link>
 
-          <a href="#">Wings</a>
+          <Link to={"/category/Wing"}>
+            <a>Wings</a>
+          </Link>
         </div>
 
         <div className="social">
@@ -46,9 +54,10 @@ export default function footer() {
           </a>
         </div>
       </div>
-      <hr/>
-      <p className="copyright">copyright 2022 - @emidev - <TbBrandWhatsapp /> +54 9 351 3441306</p>
-      
+      <hr />
+      <p className="copyright">
+        copyright 2022 - @emidev - <TbBrandWhatsapp /> +54 9 351 3441306
+      </p>
     </footer>
   );
 }

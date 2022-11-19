@@ -15,7 +15,7 @@ h2#category-title{
     letter-spacing: var(--mid-spacing);
     text-transform: uppercase;
     color: #fff;
-    filter: drop-shadow(4px 4px 2px #000);
+    filter: drop-shadow(1px 1px 3px #000);
 }
 
 @media screen and (max-width: 560px){

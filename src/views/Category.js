@@ -10,6 +10,7 @@ import foil from "../img/foil.webp"
 import wing from "../img/wings.png"
 
 export default function CategoryView() {
+
   const { categoryName } = useParams();
   const [items, setItems] = useState([]);
   const [bkgImg, setBkgImg] = useState('');
@@ -41,7 +42,7 @@ export default function CategoryView() {
           setBkgImg(def)
       }
   }, [categoryName]);
-  console.log(bkgImg)
+  console.log(categoryName)
   return (
     <Layout>
       <div id="espacio" style={{ backgroundImage: `url(${bkgImg})` }}></div>

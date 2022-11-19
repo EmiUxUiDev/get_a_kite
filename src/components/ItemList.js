@@ -4,12 +4,19 @@ import { useParams } from "react-router-dom";
 import React, {useEffect, useState} from 'react'
 
 export default function ItemList({ prods }) {
-  const { categoryName } = useParams();
+  const { categoryName, kiteStyleName, boardStyleName } = useParams();
   const [routing, setRouting] = useState("")
 
   useEffect(()=>{
-    setRouting(categoryName)
-  },[categoryName])
+    if( !categoryName && !kiteStyleName && !boardStyleName){
+      setRouting('')
+    }else if(categoryName && !kiteStyleName && !boardStyleName){
+      setRouting(categoryName)
+    }else if(!categoryName && kiteStyleName && !boardStyleName){
+      setRouting(` kite/ ${kiteStyleName}`)}else if(!categoryName && !kiteStyleName && boardStyleName){
+        setRouting(` board/ ${boardStyleName}`)
+      }
+  },[categoryName, kiteStyleName, boardStyleName])
 
   return (
     <>
