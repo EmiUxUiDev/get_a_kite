@@ -159,7 +159,14 @@ export default function ItemListContainer({ user, subs }) {
         <div className="wrapper_img">
           <img className="main_card_img" src={kite} alt="Kite cabrinha" />
         </div>
-        <p className="big-text">GetAKite</p>
+        <div id="wrapper-championship">
+        <p className="bigair">big air</p>
+        <p className="championship">world championship</p>
+        <div id="wrapper-downtext">
+        <p>tarifa 2022</p>
+        <p>BiBo beach</p>
+        </div>
+        </div>
         <h4>
           Subscription: <b className="sub-user">{subs}</b> - Hey <b className="sub-user">{user}</b>, welcome to our
           platafform!

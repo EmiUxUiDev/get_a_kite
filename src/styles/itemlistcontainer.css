@@ -16,17 +16,64 @@ section.wrapper_section{
     box-shadow: 0px 0px 15px var(--grey-transparent);
     z-index: 100;
 }
-
-
-
 .main_card_img{
+    width: 300px;
     transform: rotateY(180deg);
+    z-index: 50;
     
 }
+#wrapper-championship{
+    position: absolute;
+    top:-4rem;
+    left: 12rem;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(29, 156, 214);
+    background-image: url('../img/wave.png');
+    background-size:130%;
+    border: 8px solid rgb(33, 64, 112);
+    border-radius: var(--rnd);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    z-index: -1;
+}
+#wrapper-championship .bigair {
+    text-align: center;
+    width: 100%;
+    margin-top: 4.8rem;
+    text-shadow: 4px 4px 2px var(--clr-dark-grey);
+    background-color: rgba(0, 0, 0, 0.349);
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight:bold ;
+    letter-spacing: var(--mid-spacing);
+}
+
+#wrapper-championship .championship{
+    background-color: #fff;
+    color: rgb(29, 156, 214);
+    letter-spacing: var(--mid-spacing);
+    text-transform: uppercase;
+    font-size: var(--font-size-xsmall);
+}
+#wrapper-championship #wrapper-downtext{
+    margin-top: 0px;
+    background-color: rgb(33, 64, 112);
+}
+#wrapper-championship #wrapper-downtext p:nth-child(1){
+    letter-spacing: var(--wide-spacing);
+    text-transform: uppercase;
+    padding-top: 2px;
+}
+#wrapper-championship #wrapper-downtext p:nth-child(2){
+    letter-spacing: var(--reg-spacing);
+}
+
 div.wrapper_img{
     position: absolute;
-    top: -7rem;
-    left: 0;
+    top: -11rem;
+    left: -2rem;
     transform: rotate(-5deg);
 }
 .wrapper_section h4{
@@ -52,19 +99,7 @@ main h3{
     color: var(--clr-dark-grey);
     margin-bottom: 1rem;
 }
-.wrapper_section .big-text {
-    position: absolute;
-    color: #000;
-    font-size: 90px;
-    font-family: var(--font-1);
-    font-weight: bold;
-    letter-spacing: var(--xwide-spacing);
-    top: 3rem;
-    left: 12rem;
-    /* transform: rotate(-5deg); */
-    filter: drop-shadow(6px 6px 2px #fff);
-    
-}
+
 h4 b{
     color: var(--clr-primary);
     font-size: var(--font-size-xbig);
@@ -82,6 +117,30 @@ h4 b{
     .main_card_img{
         width: 160px;
     } 
+    #wrapper-championship{
+        top:-5rem;
+        left: 5.3rem;
+        width: 160px;
+        height: 160px;
+        z-index: -1;
+    }
+
+    #wrapper-championship .bigair {
+        margin-top: 3.4rem;
+        font-size: 30px;
+    }
+    
+    #wrapper-championship .championship{
+        letter-spacing: var(--small-spacing);
+        font-size: 0.7rem;
+    }
+
+    #wrapper-championship #wrapper-downtext p:nth-child(1){
+        letter-spacing: var(--wide-spacing);
+        text-transform: uppercase;
+        padding-top: 2px;
+    }
+
     .wrapper_section h4{
         margin-top: -1rem;
         letter-spacing: var(--reg-spacing);
@@ -94,19 +153,6 @@ h4 b{
     .wrapper_section p{
         font-size: var(--font-size-xsmall);
         letter-spacing: var(--reg-spacing);
-    }
-    .wrapper_section .big-text {
-        position: absolute;
-        color: #000;
-        font-size: var(--font-size-xbig);
-        font-family: var(--font-1);
-        font-weight: bold;
-        letter-spacing: var(--xwide-spacing);
-        top: 2rem;
-        left: 5rem;
-        /* transform: rotate(-5deg); */
-        filter: drop-shadow(5px -4px 2px var(--clr-mid-grey));
-        
     }
     
     main h3{ 
