@@ -13,17 +13,17 @@ section.wrapper-main{
 }
 
 .img{
-    height: 330px;
+    max-width: 340px;
     position: absolute;
     left:2rem;
-    top: -6rem;
+    top: -5rem;
     filter: drop-shadow(8px 8px 5px var(--clr-mid-grey));
 }
 
 .wrapper-description{
     position: absolute;
     left: 2rem;
-    top: 15rem;
+    top: 16rem;
     width: 300px;
 }
 #v-line{

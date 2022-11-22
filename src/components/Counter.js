@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/counter.css";
+import { TbShoppingCart, TbPackage } from "react-icons/tb";
 
-export default function Counter({ item }) {
-  const [stock, setStock] = useState(item[0].stock);
-  const [amount, setAmount] = useState(0);
+
+export default function Counter({ item, onSubHandler,
+   onAddHandler, amountItems, price,
+  onAddToCartHandler}) {
+
+
 
   return (
     <section id="wrapper-counter">
@@ -11,45 +15,33 @@ export default function Counter({ item }) {
       <div className="wrapper-buttons">
         <button
           className="sub"
-          disabled={amount === 0}
-          onClick={() => {
-            if (amount > 0) {
-              setAmount(amount - 1);
-            } else {
-              setAmount(0);
-            }
-          }}
+          disabled={amountItems === 0}
+          onClick={onSubHandler}
         >
           -
         </button>
 
-        <p>{amount}</p>
+        <p>{amountItems}</p>
 
         <button
           className="add"
-          disabled={amount >= item[0].stock}
-          onClick={() => {
-            if (amount <= item[0].stock) {
-              setAmount(amount + 1);
-            } else {
-              setAmount(amount);
-            }
-          }}
+          disabled={amountItems >= item[0].stock}
+          onClick={onAddHandler}
         >
           +
         </button>
       </div>
       <button
         id="add-cart"
-        disabled={amount === 0}
-        onClick={() => {
-          setStock(item[0].stock - amount);
-          setAmount(0);
-        }}
+        disabled={amountItems === 0}
+      onClick={onAddToCartHandler}
       >
-        Add to cart
+        <span className="add-cart">Add to cart</span>
+        <i className="cart">
+          <TbShoppingCart />
+        </i>
       </button>
-      <spam className="available">Total price $ {item[0].price*amount}</spam>
+      <spam className="available">Total price $ {price}</spam>
     </section>
   );
 }
