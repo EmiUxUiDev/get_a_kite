@@ -511,20 +511,16 @@ export default function ItemDetailContainer({ idDetail }) {
   console.log(idDetail);
 
   useEffect(() => {
-  
-    const prodList = new Promise((resolve) => {
-      resolve(kites);
-    });
-    prodList.then((data) => data.json());
-    prodList
+    fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
+      .then((data) => data.json())
+
       .then((data) => {
-        const result = data.filter((item) => item.id === Number(idDetail));
-        console.log(result);
-        setItem(result);
+        const result = data.filter((item) => item.id === Number(idDetail))
+        console.log(result)
+        setItem(result)
       })
 
-      .catch((error) => console.log(error));
-      
+      .catch((error) => console.log(error))
   }, [idDetail]);
 
   return item != "" ? (

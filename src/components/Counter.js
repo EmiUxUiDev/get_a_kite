@@ -2,13 +2,14 @@ import React from "react";
 import "../styles/counter.css";
 import { TbShoppingCart, TbPackage } from "react-icons/tb";
 
-
-export default function Counter({ item, onSubHandler,
-   onAddHandler, amountItems, price,
-  onAddToCartHandler}) {
-
-
-
+export default function Counter({
+  item,
+  onSubHandler,
+  onAddHandler,
+  amountItems,
+  price,
+  onAddToCartHandler,
+}) {
   return (
     <section id="wrapper-counter">
       <h5>Quantity</h5>
@@ -34,7 +35,7 @@ export default function Counter({ item, onSubHandler,
       <button
         id="add-cart"
         disabled={amountItems === 0}
-      onClick={onAddToCartHandler}
+        onClick={onAddToCartHandler}
       >
         <span className="add-cart">Add to cart</span>
         <i className="cart">
