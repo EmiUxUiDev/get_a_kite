@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 //Importo los componentes 
 import CategoryView from "../views/Category";
-import CategoryViewStyle from "../views/CategoryStyle";
+import SubCategoryView from "../views/SubCategoryView";
 import ItemView from "../views/Item";
 import Cart from "../views/Cart"
 
@@ -21,11 +21,11 @@ export const router = createBrowserRouter([
     },
     {
         path: "/category/kite/:kiteStyleName",
-        element: <CategoryViewStyle />,
+        element: <SubCategoryView />,
     },
     {
         path: "/category/board/:boardStyleName",
-        element: <CategoryViewStyle />,
+        element: <SubCategoryView />,
     },
     {
         path: "/item/:idDetail",

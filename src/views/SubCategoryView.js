@@ -6,7 +6,7 @@ import "../styles/category.css";
 import kiteImg from "../img/subKite.webp";
 import boardImg from "../img/subBoard.png";
 
-export default function CategoryViewStyle() {
+export default function SubCategoryView() {
   const { kiteStyleName } = useParams();
   const { boardStyleName } = useParams();
   const [items, setItems] = useState([]);

@@ -68,17 +68,17 @@ export default function ItemDetail({ item }) {
             <p id="text">u$s {item[0].price}</p>
             <p id="available">{`Available: ${stock}`}</p>
           </div>
-          <button className="go-to-cart">
-            <Link to={"/cart"}>
+          <Link to={"/cart"}><button className="go-to-cart">
+            
             <span className="add-cart">GO to cart</span>
-            </Link>
+            
             <i className="cart">
               <TbShoppingCart />
             </i>
             <i className="package">
               <TbPackage />
             </i>
-          </button>
+          </button></Link>
         </div>
 
         <Link to={"/"}>
