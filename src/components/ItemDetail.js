@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+ import React, { useEffect, useState, useContext } from "react";
 import "../styles/itemdetail.css";
 import Counter from "./Counter";
 import { TbX } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { TbShoppingCart, TbPackage } from "react-icons/tb";
+import { ContextCart } from "../index";
+
 
 export default function ItemDetail({ item }) {
   const [amount, setAmount] = useState(1);
   const [stock, setStock] = useState(item[0].stock);
   const [price, setPrice] = useState(0);
   const [purchase, setPurchase] = useState(false);
+  const value = useContext(ContextCart)
 
   const subHandler = () => {
     if (amount >= 0) {
@@ -122,6 +125,7 @@ export default function ItemDetail({ item }) {
             price={price}
             onAddToCartHandler={addToCartHandler}
           />
+          <p>{value}</p>
         </div>
 
         <Link to={"/"}>

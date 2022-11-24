@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../styles/item.css";
 import { TbTruckDelivery } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { ContextCart } from "../index";
 
 export default function Item({ kiteboard, index }) {
+const value = useContext(ContextCart)
   return kiteboard.price >= 1001 ? (
     <li id="item_wrapper" key={index}>
       <Link to={`/item/${kiteboard.id}`}>
@@ -28,6 +30,7 @@ export default function Item({ kiteboard, index }) {
           <p>Free shipping</p>
         </div>
       </section>
+      <p>{value}</p>
     </li>
   ) : (
     <li id="item_wrapper" key={index}>

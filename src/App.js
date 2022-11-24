@@ -1,23 +1,26 @@
-import './App.css';
-import Layout from "./components/Layout"
-import ItemListContainer from "./components/ItemListContainer"
-import def from "./img/Kiteboarding_overview.webp"
+import "./App.css";
+import Layout from "./components/Layout";
+import ItemListContainer from "./components/ItemListContainer";
+import def from "./img/Kiteboarding_overview.webp";
+// Importo la funcion.
+
+
+//Exporto el contexto
 
 
 const user = {
   id: "0",
   name: "Teacher",
-  subs: "Premium"
-}
-
+  subs: "Premium",
+};
 
 export default function App() {
   return (
+
       <Layout>
         <div id="espacio" style={{ backgroundImage: `url(${def})` }}></div>
-          <ItemListContainer subs={user.subs} user={user.name}/> 
+        <ItemListContainer subs={user.subs} user={user.name} />
       </Layout>
-  )
+    
+  );
 }
-
-
