@@ -2,15 +2,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import React, { createContext } from "react";
+import { CartContextProvider} from "./context/cartContext";
+import React from 'react'
 
-export const ContextCart = createContext("Hoola");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ContextCart.Provider value={"Lo que sea"}>
+    <CartContextProvider>
       <RouterProvider router={router} />
-    </ContextCart.Provider>
+    </CartContextProvider>
     {/* <App /> */}
   </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/counter.css";
 import { TbShoppingCart, TbPackage } from "react-icons/tb";
+import { CartContext } from "../context/cartContext";
 
 export default function Counter({
   item,
@@ -8,11 +9,14 @@ export default function Counter({
   onAddHandler,
   amountItems,
   price,
-  onAddToCartHandler,
+  onAddToCartHandler
 }) {
   return (
-    <section id="wrapper-counter">
+
+    <CartContext.Consumer>{({cartItem})=>{return(
+      <section id="wrapper-counter">
       <h5>Quantity</h5>
+      <h5>{cartItem}</h5>
       <div className="wrapper-buttons">
         <button
           className="sub"
@@ -44,5 +48,8 @@ export default function Counter({
       </button>
       <spam className="available">Total price $ {price}</spam>
     </section>
+    )}}</CartContext.Consumer>
+
+
   );
 }

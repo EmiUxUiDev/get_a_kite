@@ -2,10 +2,6 @@ import "./App.css";
 import Layout from "./components/Layout";
 import ItemListContainer from "./components/ItemListContainer";
 import def from "./img/Kiteboarding_overview.webp";
-// Importo la funcion.
-
-
-//Exporto el contexto
 
 
 const user = {

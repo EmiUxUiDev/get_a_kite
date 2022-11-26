@@ -4,7 +4,7 @@ import App from "../App";
 import CategoryView from "../views/Category";
 import SubCategoryView from "../views/SubCategoryView";
 import ItemView from "../views/Item";
-import Cart from "../views/Cart"
+import CartView from "../views/CartView"
 
 
 
@@ -33,6 +33,6 @@ export const router = createBrowserRouter([
     },
     {
         path: "/cart",
-        element: <Cart />,
+        element: <CartView />,
     }
 ])
