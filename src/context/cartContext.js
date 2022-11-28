@@ -37,11 +37,12 @@ export const CartContextProvider = ({ children }) => {
   }
   console.log(cartProducts);
 
-  //   function removeItemToCart(id) {
-  //     setCartProducts(cartProducts.filter((item) => {
-  //       item.id !== id
-  //     }))
-  //   }
+    // function removeItemToCart(id) {
+    //   setCartProducts(cartProducts.filter((item) => {
+    //     return item.id !== id
+    //   }))
+    //   console.log(cartProducts)
+    // }
 
   // function clearCart() {
   //   setCartProducts([])
@@ -68,7 +69,9 @@ export const CartContextProvider = ({ children }) => {
         price,
         setPrice,
         cartProducts,
-        setCartProducts
+        setCartProducts,
+        itemInCart,
+        setItemInCart
       }}
     >
       {children}
