@@ -6,38 +6,51 @@ export default function Cart() {
   const { cartProducts, setCartProducts, itemInCart, setItemInCart } =
     useContext(CartContext);
   console.log(cartProducts);
-  return cartProducts.map((item) => {
+
+   
+  return (cartProducts.length !== 0) ? (
+    
+    cartProducts.map((item) => {
     return (
-      <article className="wrapper-main">
-        <img id="thumblenail" src={item.path} alt="" />
+        <>
+        <article className="wrapper-cart">
+          <img id="thumblenail" src={item.path} alt="" />
 
-        <div className="wrapper-info-cart">
-          <div>
-            <p id="category-txt">{item.category}</p>
-            <p id="brand-txt">{item.brand}</p>
+          <div className="wrapper-info-cart">
+            <div>
+              <p id="category-txt">{item.category}</p>
+              <p id="brand-txt">{item.brand}</p>
+            </div>
+            <div id="wrapper-model-cart">
+              <p>{item.id}</p>
+              <p id="model-txt">{item.model}</p>
+              <p id="available-txt">{`available ${item.stock}`}</p>
+            </div>
           </div>
-          <div id="wrapper-model-cart">
-            <p>{item.id}</p>
-            <p id="model-txt">{item.model}</p>
-            <p id="available-txt">{`available ${item.stock}`}</p>
-          </div>
-        </div>
 
-        <p>Quantity: {item.qty} </p>
-        <button
-          id="delete-btn"
-          onClick={() => {
-            setCartProducts(
-              cartProducts.filter((i) => {
-                return i.id !== item.id;
-              })
-            );
-            setItemInCart(itemInCart-1)
-          }}
-        >
-          Delete
-        </button>
-      </article>
-    );
-  });
+          <p>Quantity: {item.qty} </p>
+          <button
+            id="delete-btn"
+            onClick={() => {
+              setCartProducts(
+                cartProducts.filter((i) => {
+                  return i.id !== item.id;
+                })
+              );
+              setItemInCart(itemInCart - 1);
+            }}
+          >
+            Delete
+          </button>
+        </article>
+        </>
+  
+    )
+  })
+):
+(
+  <section id="empty">
+    <h1>Empty cart, go and add items! </h1>
+  </section>
+)
 }

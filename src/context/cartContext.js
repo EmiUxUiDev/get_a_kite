@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState} from "react";
 export const CartContext = createContext("");
 
 export const CartContextProvider = ({ children }) => {
@@ -19,23 +19,23 @@ export const CartContextProvider = ({ children }) => {
   
 
 
-  function addItemToCart() {
+  // function addItemToCart() {
     
-    const subs = stock - amount;
+  //   const subs = stock - amount;
 
-    if (subs >= 0) {
-      setStock(subs)
-      setItemm({...itemm, stock: stock, qty: amount})
-      console.log(itemm);
-      setCartProducts([...cartProducts, itemm]);
-      setPurchase(true);
-      setItemInCart(itemInCart+1)
-    } else {
-      alert("No hay suficiente stock");
-    }
+  //   if (subs >= 0) {
+  //     setStock(subs)
+  //     setItemm({...itemm, stock: stock, qty: amount})
+  //     console.log(itemm);
+  //     setCartProducts([...cartProducts, itemm]);
+  //     setPurchase(true);
+  //     setItemInCart(itemInCart+1)
+  //   } else {
+  //     alert("No hay suficiente stock");
+  //   }
 
-  }
-  console.log(cartProducts);
+  // }
+  // console.log(cartProducts);
 
     // function removeItemToCart(id) {
     //   setCartProducts(cartProducts.filter((item) => {
@@ -59,7 +59,6 @@ export const CartContextProvider = ({ children }) => {
       value={{
         purchase,
         setPurchase,
-        addItemToCart,
         itemm,
         setItemm,
         stock,

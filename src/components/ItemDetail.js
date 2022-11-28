@@ -83,20 +83,23 @@ export default function ItemDetail({ item }) {
             <p id="text">u$s {item[0].price}</p>
             <p id="available">{`Available: ${stock}`}</p>
           </div>
+          <div>
           <Link to={"/cart"}>
             <button className="go-to-cart" onClick={()=>(
               setPurchase(false), setAmount(1)
               )}>
-              <span className="add-cart">Go to cart!</span>
-
-              <i className="cart">
-                <TbShoppingCart />
-              </i>
-              <i className="package">
-                <TbPackage />
-              </i>
+              <span className="add-cart">Go to cart</span>    
             </button>
           </Link>
+          <Link to={"/"} onClick={()=>(
+            setPurchase(false), setAmount(1)
+            )}>
+            <button className="go-to-cart " >
+              <span className="add-cart continue-shopping">Continue shopping!</span>
+            </button>
+          </Link>
+          </div>
+         
         </div>
 
         <Link to={"/"}>
