@@ -12,11 +12,14 @@ export default function Counter({
   onAddToCartHandler
 }) {
   return (
+    <CartContext.Consumer>{({addItemToCart, setItemm, setStock})=>{
 
-    <CartContext.Consumer>{({cartItem})=>{return(
+      setItemm(item[0])
+      setStock(item[0].stock)
+
+      return(
       <section id="wrapper-counter">
       <h5>Quantity</h5>
-      <h5>{cartItem}</h5>
       <div className="wrapper-buttons">
         <button
           className="sub"
@@ -39,7 +42,8 @@ export default function Counter({
       <button
         id="add-cart"
         disabled={amountItems === 0}
-        onClick={onAddToCartHandler}
+        
+        onClick={addItemToCart}
       >
         <span className="add-cart">Add to cart</span>
         <i className="cart">

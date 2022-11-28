@@ -1,28 +1,73 @@
-section.wrapper-cart{
-    margin: 1rem auto;
-    width: 800px;
-    height: 80%;
-    background-image: url('../img/wave.png');
-    background-position:right;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
+.wrapper-main{
+    height: 80px;
+    width: 600px;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--rnd-med);
+    filter:drop-shadow(2px 2px 4px var(--clr-mid-grey));
+    color: var(--clr-dark-grey); 
 }
 
-section.wrapper-cart div{
-    background: rgba(255, 255, 255);
-    padding: 0.5rem 0;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: var(--rnd-strong);
-    filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.15));
+img#thumblenail{
+   height: 65px;
+   margin-right: 2rem;
+  filter:drop-shadow(4px 4px 2px var(--clr-mid-grey));
+}
+div.wrapper-info-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 260px;
+    margin-right: 1rem;
+    background-color: var(--clr-light-grey);
+    border-radius: var(--rnd-med);
+    padding: 0.5rem;
+     
 }
 
-section.wrapper-cart p{
-    text-align: center;
-    font-size: var(--font-size-big);
+article.wrapper-main p{
     font-family: var(--font-2);
-    font-weight: bold;
-    color: var(--clr-primary);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    letter-spacing: var(--wide-spacing);
+    font-size: var(--font-size-small);
+}
+
+div#wrapper-model-cart{margin-right: 1rem;}
+
+#delete-btn{
+    padding: 0.2rem 1rem;
+    font-size: var(--font-size-small);
+    font-family: var(--font-2);
+    border: 1px solid var(--clr-mid-grey);
+    border-radius: var(--rnd-soft);
+    margin-right: 1rem;
+    background-color: #fff;
+    letter-spacing: var(--reg-spacing);
+    transition: all 100ms ease-in-out;
+}
+#delete-btn:hover{
+    background-color: var(--clr-dark-grey);
+    color: #fff;
+}
+#category-txt{
+    font-family: var(--font-2);
+    font-size: var(--font-size-xsmall);
+}
+#brand-txt{
+    font-size: var(--font-size-small);
+    font-family: var(--font-2);
+}
+#model-txt{
+    font-family: var(--font-1);
+    font-size: var(--font-size-mid);
+    letter-spacing: var(--reg-spacing);
+    font-weight: bolder;
+    color: #000;
+    text-shadow: 0px 4px 2px var(--clr-mid-grey);
+}
+#available-txt{
+    font-size: var(--font-size-xsmall);
+    font-family: var(--font-2); 
 }
