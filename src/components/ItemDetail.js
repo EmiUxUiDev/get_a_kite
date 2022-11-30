@@ -3,24 +3,45 @@ import "../styles/itemdetail.css";
 import Counter from "./Counter";
 import { TbX } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { TbShoppingCart, TbPackage } from "react-icons/tb";
 import { CartContext } from "../context/cartContext";
 
-export default function ItemDetail({ item }) {
-  // const [amount, setAmount] = useState(1);
+
+
+export default function ItemDetail( { item }) {
+
+  const {id, category, brand, model, price, stock, path} = item[0]
+console.log(item)
   // const [stock, setStock] = useState(item[0].stock);
-  // const [price, setPrice] = useState(0);
 
-  const {
-    purchase,
-    setPurchase,
-    stock,
-    amount,
-    setAmount,
-    price,
-    setPrice,
-  } = useContext(CartContext);
+  //Inicio el booleano de compras en false, no hay compras cuando carga
+   const [purchase, setPurchase] = useState(false);
+  //Inicia el contador en 1
+  const [amount, setAmount] = useState(1);
 
+  //Lo uso para que me de info del precio total segun cantidad en el contador
+  const [priceProds, setPrice] = useState(0);
+
+  //Traigo lo que necesito del contexto
+  const { cartProducts, addItemToCart } = useContext(CartContext);
+
+
+
+    const addToCart = () => {
+      //Creo variable con los campos que necesito para el carrito
+      let cleanItem = {
+        id,
+        category,
+        brand,
+        model,
+        price,
+        stock,
+        path,
+        qty:amount
+       }
+       console.log(cleanItem);
+      setPurchase(true);
+      addItemToCart(cleanItem)
+    };  
 
   const subHandler = () => {
     if (amount >= 0) {
@@ -38,18 +59,6 @@ export default function ItemDetail({ item }) {
     }
   };
 
-  // const addToCartHandler = ({addItemToCart}) => {
-  //   const subs = stock - amount;
-  //   if (subs >= 0) {
-  //     setStock(stock - amount);
-  //     item[0].stock = stock;
-  //     console.log(item)
-
-  //     setPurchase(true);
-  //   } else {
-  //     alert("No hay suficiente stock");
-  //   }
-  // };
 
   useEffect(() => {
     setPrice(item[0].price * amount);
@@ -84,28 +93,26 @@ export default function ItemDetail({ item }) {
             <p id="available">{`Available: ${stock}`}</p>
           </div>
           <div>
-          <Link to={"/cart"}>
-            <button className="go-to-cart" onClick={()=>(
-              setPurchase(false), setAmount(1)
-              )}>
-              <span className="add-cart">Go to cart</span>    
-            </button>
-          </Link>
-          <Link to={"/"} onClick={()=>(
-            setPurchase(false), setAmount(1)
-            )}>
-            <button className="go-to-cart " >
-              <span className="add-cart continue-shopping">Continue shopping!</span>
-            </button>
-          </Link>
+            <Link to={"/cart"}>
+              <button
+                className="go-to-cart"
+                onClick={() => (setPurchase(false), setAmount(1))}
+              >
+                <span className="add-cart">Go to cart</span>
+              </button>
+            </Link>
+            <Link to={"/"} onClick={() => (setPurchase(false), setAmount(1))}>
+              <button className="go-to-cart ">
+                <span className="add-cart continue-shopping">
+                  Continue shopping!
+                </span>
+              </button>
+            </Link>
           </div>
-         
         </div>
 
         <Link to={"/"}>
-          <button id="close" onClick={()=>(
-            setPurchase(false), setAmount(1)
-            )}>
+          <button id="close" onClick={() => (setPurchase(false), setAmount(1))}>
             <TbX />
           </button>
         </Link>
@@ -141,14 +148,14 @@ export default function ItemDetail({ item }) {
             item={item}
             onSubHandler={subHandler}
             onAddHandler={addHandler}
+            onAddItemToCartHandler={addToCart}
             amountItems={amount}
             price={price}
-            // onAddToCartHandler={addToCartHandler}
           />
         </div>
 
         <Link to={"/"}>
-          <button id="close" >
+          <button id="close">
             <TbX />
           </button>
         </Link>

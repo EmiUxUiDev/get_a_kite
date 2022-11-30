@@ -1,11 +1,12 @@
 
 article.wrapper-cart{
-    height: 90px;
+    height: 100px;
     width: 600px;
     margin: 2rem auto;
-    padding: 0.5rem;
+    padding: 0.25rem;
     background-color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-radius: var(--rnd-med);
@@ -13,8 +14,15 @@ article.wrapper-cart{
     color: var(--clr-dark-grey); 
 }
 
+div.secc-info{
+    height: 60px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 img#thumblenail{
-   height: 65px;
+   height: 110px;
    margin-right: 2rem;
   filter:drop-shadow(4px 4px 2px var(--clr-mid-grey));
 }
@@ -22,12 +30,14 @@ div.wrapper-info-cart{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 260px;
+    width: 300px;
+    height: 70px;
     margin-right: 1rem;
     background-color: var(--clr-light-grey);
     border-radius: var(--rnd-med);
     padding: 0.5rem;
-     
+    margin-top: 0.8rem; 
+    margin-left: -1.5rem;
 }
 
 article.wrapper-cart p{
@@ -38,15 +48,17 @@ article.wrapper-cart p{
 div#wrapper-model-cart{margin-right: 1rem;}
 
 #delete-btn{
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 1.5rem;
     font-size: var(--font-size-small);
     font-family: var(--font-2);
     border: 1px solid var(--clr-mid-grey);
     border-radius: var(--rnd-soft);
     margin-right: 1rem;
+    margin-top: 1rem;
     background-color: #fff;
     letter-spacing: var(--reg-spacing);
     transition: all 100ms ease-in-out;
+    text-transform: uppercase;
 }
 #delete-btn:hover{
     background-color: var(--clr-dark-grey);
@@ -87,4 +99,24 @@ div#wrapper-model-cart{margin-right: 1rem;}
     background-color: #fff;
     padding: 0.5rem 4rem;
     border-radius: var(--rnd-med);
+}
+.secc-calculate{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 15rem;
+}
+#xsmall{
+    font-size: var(--font-size-xsmall);
+    letter-spacing: var(--reg-spacing);
+    padding: 0 0.5rem;
+}
+p.background{
+    /* background-color: var(--clr-secondary); */
+    color:#000;
+    font-size: var(--font-size-small);
+    letter-spacing: var(--reg-spacing);
+    
+    padding: 0 0.5rem;
+    border-radius: var(--rnd-soft);
+    text-transform: capitalize;
 }

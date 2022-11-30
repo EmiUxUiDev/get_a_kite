@@ -13,7 +13,6 @@ div .wrapper_cart{
     font-size: var(--font-size-small);
     font-family: var(--font-2);
     border: none;
-    background-color: #fff;
     padding-right: 6px;
     padding-bottom: 16px;
     padding-left: 6px;
@@ -35,13 +34,14 @@ div .wrapper_cart{
 }
 
 button.display-none{
+    
     background-color: transparent;
     color: transparent;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.8s;
 }
 
 button.display{
     background-color: #fff;
     color: var(--clr-secondary);
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.8s;
 }

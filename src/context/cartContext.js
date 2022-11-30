@@ -1,76 +1,81 @@
-import React, { createContext, useState} from "react";
+import React, { createContext, useState } from "react";
 export const CartContext = createContext("");
 
 export const CartContextProvider = ({ children }) => {
-  //Aca podemos usar la logica que nos haga falta, estados, funciones, etc.
+  //Productos en carrito
+  const [cartProducts, setCartProducts] = useState([]);
 
-  const initStateProd = [];
+  //Para actualizar contador cartwidget
+  const [itemInCart, setItemInCart] = useState(0);
 
-  const [cartProducts, setCartProducts] = useState(initStateProd);
-  const [itemm, setItemm] = useState([]);
-  const [purchase, setPurchase] = useState(false);
-  const [amount, setAmount] = useState(1);
-  const [price, setPrice] = useState(0);
-  const [stock, setStock] = useState(0);
-  const [itemInCart, setItemInCart] = useState(0)
-  console.log(itemInCart);
-  console.log(stock);
-  console.log(itemm);
-  
+  //Item actual para borrar
+  const [currentItem, setCurrentItem] = useState('')
 
+  //Precio total de productos en carrito
+  const [totalPrice, setTotalPrice] = useState(0)
 
-  // function addItemToCart() {
-    
-  //   const subs = stock - amount;
+  //***************ADD PRODUCTS TO CART**************************
+  ////////////////////////////////////////////////////////////////////////
+  const addItemToCart = (i) => {
+    //Verifico si existen dos items iguales(true/false)
+    const isInCart = cartProducts.some((item) => item.id === i.id);
 
-  //   if (subs >= 0) {
-  //     setStock(subs)
-  //     setItemm({...itemm, stock: stock, qty: amount})
-  //     console.log(itemm);
-  //     setCartProducts([...cartProducts, itemm]);
-  //     setPurchase(true);
-  //     setItemInCart(itemInCart+1)
-  //   } else {
-  //     alert("No hay suficiente stock");
-  //   }
+    if (isInCart) {
+      //Si existe, mapeo el array para, una vez encontrado el item, sumarle solo la cantidad
+      const updatedCartProducts = cartProducts.map((item) => {
+        if (item.id === i.id) {
+          return { ...item, qty: item.qty + i.qty };
+        } else {
+          return item;
+        }
+      });
 
-  // }
-  // console.log(cartProducts);
+      setCartProducts(updatedCartProducts);
+    } else {
+      setCartProducts([...cartProducts, i]);
+      setItemInCart(itemInCart + 1);
+    }
+  };
+  ////////////////////////////////////////////////////
+  //******************************************************
 
-    // function removeItemToCart(id) {
-    //   setCartProducts(cartProducts.filter((item) => {
-    //     return item.id !== id
-    //   }))
-    //   console.log(cartProducts)
-    // }
+  //***************REMOVE PRODUCT TO CART **************************
+  ////////////////////////////////////////////////////////////////////////
 
-  // function clearCart() {
-  //   setCartProducts([])
-  // }
+  const removeItemToCart = (id) => {
+    setCartProducts(cartProducts.filter((i) => {
+        return i.id !== id;
+      })
+    );
+    setItemInCart(itemInCart - 1);
+  };
 
-  //   function isInCart(id) {
-  //     return Boolean(cartProducts.find((item) => {
-  //       item.id === id
-  //     }))
-  //   }
+  ////////////////////////////////////////////////////
+  //******************************************************
+
+  //***************REMOVE ALL PRODUCTS **************************
+  ////////////////////////////////////////////////////////////////////////
+
+  const removeAllItems = () => {
+    setCartProducts([]);
+    setItemInCart(0);
+  };
+
+  ////////////////////////////////////////////////////
+  //******************************************************
+
 
   return (
     <CartContext.Provider
       value={{
-        purchase,
-        setPurchase,
-        itemm,
-        setItemm,
-        stock,
-        setStock,
-        amount,
-        setAmount,
-        price,
-        setPrice,
         cartProducts,
-        setCartProducts,
+        addItemToCart,
+        removeAllItems,
         itemInCart,
-        setItemInCart
+        removeItemToCart,
+        setCurrentItem,
+        totalPrice,
+        setTotalPrice
       }}
     >
       {children}
