@@ -101,22 +101,21 @@ div#wrapper-model-cart{margin-right: 1rem;}
     border-radius: var(--rnd-med);
 }
 .secc-calculate{
+    width: 600px;
     display: flex;
+    justify-content: center;
     align-items: flex-end;
-    margin-left: 15rem;
+    margin-left: 12rem;
 }
 #xsmall{
     font-size: var(--font-size-xsmall);
     letter-spacing: var(--reg-spacing);
     padding: 0 0.5rem;
+    margin-right: 0.5rem;
 }
-p.background{
-    /* background-color: var(--clr-secondary); */
-    color:#000;
-    font-size: var(--font-size-small);
+#background{
+    font-size: var(--font-size-xsmall);
     letter-spacing: var(--reg-spacing);
-    
-    padding: 0 0.5rem;
-    border-radius: var(--rnd-soft);
-    text-transform: capitalize;
+    text-transform: uppercase;
+    margin-left: 2.5rem;
 }

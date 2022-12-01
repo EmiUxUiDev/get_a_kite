@@ -1,18 +1,18 @@
 import React, { createContext, useState } from "react";
+
+
 export const CartContext = createContext("");
 
 export const CartContextProvider = ({ children }) => {
   //Productos en carrito
   const [cartProducts, setCartProducts] = useState([]);
 
-  //Para actualizar contador cartwidget
-  const [itemInCart, setItemInCart] = useState(0);
+    //Lo uso para que me de info del precio total segun cantidad en el contador
+    const [priceProds, setPrice] = useState(0);
 
-  //Item actual para borrar
-  const [currentItem, setCurrentItem] = useState('')
+    // const[available, setAvailable] = useState(0)
 
-  //Precio total de productos en carrito
-  const [totalPrice, setTotalPrice] = useState(0)
+
 
   //***************ADD PRODUCTS TO CART**************************
   ////////////////////////////////////////////////////////////////////////
@@ -24,20 +24,23 @@ export const CartContextProvider = ({ children }) => {
       //Si existe, mapeo el array para, una vez encontrado el item, sumarle solo la cantidad
       const updatedCartProducts = cartProducts.map((item) => {
         if (item.id === i.id) {
-          return { ...item, qty: item.qty + i.qty };
+          return { ...item, qty: item.qty + i.qty, stock: item.stock - i.qty};
         } else {
           return item;
         }
       });
-
+      console.log(updatedCartProducts);
       setCartProducts(updatedCartProducts);
     } else {
+      i.stock =  i.stock-i.qty
       setCartProducts([...cartProducts, i]);
-      setItemInCart(itemInCart + 1);
+      console.log(i);
     }
+    
   };
-  ////////////////////////////////////////////////////
   //******************************************************
+
+
 
   //***************REMOVE PRODUCT TO CART **************************
   ////////////////////////////////////////////////////////////////////////
@@ -47,22 +50,49 @@ export const CartContextProvider = ({ children }) => {
         return i.id !== id;
       })
     );
-    setItemInCart(itemInCart - 1);
   };
-
-  ////////////////////////////////////////////////////
   //******************************************************
+
+
+
 
   //***************REMOVE ALL PRODUCTS **************************
   ////////////////////////////////////////////////////////////////////////
 
   const removeAllItems = () => {
     setCartProducts([]);
-    setItemInCart(0);
   };
-
-  ////////////////////////////////////////////////////
   //******************************************************
+
+
+
+
+
+  //***************ITEMS EN EL CARRITO **************************
+  ////////////////////////////////////////////////////////////////////////
+
+  const itemInCart = () => {
+    return cartProducts.reduce((stored, item)=>
+      stored += item.qty, 0
+    )
+  };
+  //******************************************************
+
+
+
+
+
+    //***************PRECIO TOTAL CARRITO **************************
+  ////////////////////////////////////////////////////////////////////////
+
+  const cartTotalPrice = () => {
+    return cartProducts.reduce((stored, item)=>
+      stored += item.qty*item.price, 0
+    )
+  };
+console.log(cartTotalPrice());
+  //******************************************************
+
 
 
   return (
@@ -73,9 +103,9 @@ export const CartContextProvider = ({ children }) => {
         removeAllItems,
         itemInCart,
         removeItemToCart,
-        setCurrentItem,
-        totalPrice,
-        setTotalPrice
+        cartTotalPrice,
+        priceProds,
+        setPrice
       }}
     >
       {children}

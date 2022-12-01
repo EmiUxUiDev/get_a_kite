@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 export default function CartWidget() {
 
   const {itemInCart} = useContext(CartContext)
+
   return (
     <Link to={'/cart'}>
       <div className="wrapper_cart">
@@ -17,8 +18,8 @@ export default function CartWidget() {
       </div>
 
       <div className ='cart-item'>
-        <button className={itemInCart === 0 ? 'display-none' : 'display'}
-        >{itemInCart}</button>
+        <button className={itemInCart() === 0 ? 'display-none' : 'display'}
+        >{itemInCart()}</button>
       </div>
     </div>
     </Link>

@@ -11,19 +11,16 @@ export default function ItemDetail( { item }) {
 
   const {id, category, brand, model, price, stock, path} = item[0]
 console.log(item)
-  // const [stock, setStock] = useState(item[0].stock);
+
 
   //Inicio el booleano de compras en false, no hay compras cuando carga
    const [purchase, setPurchase] = useState(false);
+
   //Inicia el contador en 1
   const [amount, setAmount] = useState(1);
 
-  //Lo uso para que me de info del precio total segun cantidad en el contador
-  const [priceProds, setPrice] = useState(0);
-
   //Traigo lo que necesito del contexto
-  const { cartProducts, addItemToCart } = useContext(CartContext);
-
+  const { cartProducts, addItemToCart, setPrice, priceProds } = useContext(CartContext);
 
 
     const addToCart = () => {
@@ -38,9 +35,9 @@ console.log(item)
         path,
         qty:amount
        }
-       console.log(cleanItem);
       setPurchase(true);
       addItemToCart(cleanItem)
+    
     };  
 
   const subHandler = () => {
@@ -62,9 +59,10 @@ console.log(item)
 
   useEffect(() => {
     setPrice(item[0].price * amount);
+    console.log(priceProds);
   }, [addHandler, subHandler]);
 
-  // , addToCartHandler
+
 
   return purchase ? (
     <>
@@ -90,7 +88,7 @@ console.log(item)
             </h3>
             <h2>{item[0].model}</h2>
             <p id="text">u$s {item[0].price}</p>
-            <p id="available">{`Available: ${stock}`}</p>
+            <p id="available">{`Available: ${item[0].stock - amount}`}</p>
           </div>
           <div>
             <Link to={"/cart"}>

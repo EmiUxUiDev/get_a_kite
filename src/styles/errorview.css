@@ -1,0 +1,51 @@
+div.wrapper-error{
+    margin: 0 auto;
+    width: 800px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#bkg404{
+    position: absolute;
+    top: -11rem;
+    z-index: -1;
+}
+.error404{
+    margin-top: 12rem;
+    font-family: var(--font-2);
+    font-size: 14rem;
+    color: rgba(255, 255, 255, 0.8);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    text-shadow: 10px -15px 14px rgba(255, 255, 255, 0.4);
+}
+.error-info{
+    margin-top: -1rem;
+    font-size: var(--font-size-mid);
+    font-family: var(--font-2);
+    letter-spacing: var(--mid-spacing);
+    color: #fff;
+}
+.link{
+    margin: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: var(--font-size-mid);
+    font-family: var(--font-1);
+    font-weight: bold;
+    letter-spacing: var(--wide-spacing);
+    text-transform: capitalize;
+    border: 3px solid #fff;
+    padding: 0.25rem 6rem;
+    border-radius: var(--rnd-strong);
+    transition: all 0.2s ease-out;
+}
+.link:hover{
+    filter:drop-shadow(10px -15px 18px rgba(255, 255, 255, 1)) ;
+}
+.error-img{
+    margin-left: 1rem;
+    width: 40px;
+}

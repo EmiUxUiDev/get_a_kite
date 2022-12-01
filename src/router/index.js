@@ -5,10 +5,11 @@ import CategoryView from "../views/Category";
 import SubCategoryView from "../views/SubCategoryView";
 import ItemView from "../views/Item";
 import CartView from "../views/CartView"
-
+import ErrorView from "../views/ErrorView";
 
 
 export const router = createBrowserRouter([
+    
     {
         //Path q voy a usar en navbar
         path: "/",
@@ -34,5 +35,9 @@ export const router = createBrowserRouter([
     {
         path: "/cart",
         element: <CartView />,
+    },
+    {
+        path: "*",
+        element: <ErrorView />,
     }
 ])

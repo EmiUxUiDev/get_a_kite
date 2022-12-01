@@ -1,3 +1,25 @@
+h1.margin-top{
+    margin: 3rem 0;
+    text-align: center;
+    font-family: var(--font-2);
+    font-size: var(--font-size-mid);
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--wide-spacing);
+    text-shadow: 1px 1px 3px var(--clr-mid-grey);
+}
+h2#category-title-dark{
+    position: absolute;
+    top: 4rem;
+    padding: 0 2rem 0 1rem;
+    font-size: var(--font-size-small);
+    font-family: var(--font-2);
+    font-weight: 300;
+    letter-spacing: var(--mid-spacing);
+    text-transform: uppercase;
+    color: var(--clr-dark-grey);
+    background:linear-gradient(to left,#ffffff00,30%, rgba(0, 0, 0, 0.15));;
+}
 .back-shopping{
    margin-left: 44%;
    margin-bottom: 1rem;
@@ -12,6 +34,7 @@
     filter:drop-shadow(4px 4px 2px var(--clr-mid-grey));
     transition: all 150ms ease-in-out;
     text-transform: uppercase;
+    background-color: #fff;
 }
 
 .wrapper-btn-cart{
@@ -34,3 +57,13 @@
 }
 
 .display-off{display: none;}
+
+.show{
+    color: var(--clr-dark-grey);
+    font-size: var(--font-size-mid);
+    font-family: var(--font-2);
+    text-transform: capitalize;
+    letter-spacing: var(--xwide-spacing);
+    filter:drop-shadow(4px 4px 2px var(--clr-mid-grey));
+    margin: 1.5rem;
+}

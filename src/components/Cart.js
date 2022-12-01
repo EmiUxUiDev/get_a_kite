@@ -5,15 +5,14 @@ import { CartContext } from "../context/cartContext";
 export default function Cart() {
   const {
     cartProducts,
-    removeItemToCart,
- 
+    removeItemToCart
   } = useContext(CartContext);
 
   return cartProducts.length !== 0 ? (
     cartProducts.map((item) => { 
       return (
         <>
-          <h2 id="category-title">home / cart</h2>
+         
           <article className="wrapper-cart">
             <div className="secc-info">
               <img id="thumblenail" src={item.path} alt="" />
@@ -43,13 +42,12 @@ export default function Cart() {
             <div className="secc-calculate">
               <p id="xsmall">Quantity: {item.qty} </p>
               <p id="xsmall">Unit price: {`u$s${item.price}`} </p>
-              <p className="background">total: {`u$s ${item.price * item.qty}`} </p>
+              <p id="background">total: {`u$s ${item.price * item.qty}`} </p>
             </div>
           </article>
         </>
-      );
-    })
-
+      )
+    }) 
   ) : (
     <>
       <h2 id="category-title">home / cart</h2>
