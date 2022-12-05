@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import "../styles/cart.css";
 import { CartContext } from "../context/cartContext";
+import ModalConfirmation from './ModalConfirmation'
+
 
 export default function Cart() {
   const {
@@ -12,7 +14,6 @@ export default function Cart() {
     cartProducts.map((item) => { 
       return (
         <>
-         
           <article className="wrapper-cart">
             <div className="secc-info">
               <img id="thumblenail" src={item.path} alt="" />
@@ -45,12 +46,14 @@ export default function Cart() {
               <p id="background">total: {`u$s ${item.price * item.qty}`} </p>
             </div>
           </article>
+          <ModalConfirmation />
         </>
       )
     }) 
   ) : (
     <>
       <h2 id="category-title">home / cart</h2>
+      <div id="filter"></div>
       <section id="empty">
         <h1>Empty cart, go and add items! </h1>
       </section>

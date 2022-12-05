@@ -4,7 +4,7 @@ import Counter from "./Counter";
 import { TbX } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
-
+import {toast} from 'react-toastify'
 
 
 export default function ItemDetail( { item }) {
@@ -37,7 +37,17 @@ console.log(item)
        }
       setPurchase(true);
       addItemToCart(cleanItem)
-    
+
+      toast.info( `${cleanItem.qty} ${cleanItem.model} added to cart!`, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     };  
 
   const subHandler = () => {

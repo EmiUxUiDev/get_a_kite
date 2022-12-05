@@ -27,6 +27,7 @@ div.wrapper-error{
     font-family: var(--font-2);
     letter-spacing: var(--mid-spacing);
     color: #fff;
+    text-align: center;
 }
 .link{
     margin: 1.5rem;
@@ -48,4 +49,31 @@ div.wrapper-error{
 .error-img{
     margin-left: 1rem;
     width: 40px;
+}
+
+@media screen and (max-width: 560px){
+    div.wrapper-error{
+        /* margin: 0 auto; */
+        width: auto;
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    img#bkg404{
+        position: absolute;
+        margin-top:20vh;
+        height: auto;
+    }
+    .error404{
+        font-size: 10rem;
+        text-align: center;
+    }
+    .error-info{
+        font-size: var(--font-size-reg);
+    }
+    .link{
+        padding: 0.25rem 3rem;
+    }
 }

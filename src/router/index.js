@@ -7,8 +7,7 @@ import ItemView from "../views/Item";
 import CartView from "../views/CartView"
 import ErrorView from "../views/ErrorView";
 
-
-export const router = createBrowserRouter([
+export const routing = createBrowserRouter([
     
     {
         //Path q voy a usar en navbar
@@ -39,5 +38,6 @@ export const router = createBrowserRouter([
     {
         path: "*",
         element: <ErrorView />,
-    }
+    },
+    
 ])

@@ -43,7 +43,7 @@ export default function CategoryView() {
       }
   }, [categoryName]);
   console.log(categoryName)
-  console.log(items)
+  console.log(items.id)
   return (
     <Layout>
       <div id="espacio" style={{ backgroundImage: `url(${bkgImg})` }}></div>
