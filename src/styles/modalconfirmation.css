@@ -3,31 +3,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #00325a81;
     top: 0;
     width: 100%;
-    height: 120%;
+    height: 100%;
     z-index: 1000;
 }
 .wrapper-modal{
     width: 300px;
     height:180px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* flex-direction: column; */
+    justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
     background-color: #fff;
     border-radius: var(--rnd-med);
-    filter: drop-shadow(2px 2px 4px var(--clr-mid-grey));
+    filter: drop-shadow(2px 2px 4px #000);
 }
 .modal-btn{
-    width: 150px;
-    
-    margin-top: 2rem;
+    width: 200px;
     display: flex;
+    flex-direction: column;
     justify-content:center;
-    
+    align-items: center;
 }
 
 .modal-title{
@@ -36,17 +35,27 @@
 .hide{
     visibility: hidden;
 }
+.wrapper-modal i{
+    font-size: 80px;
+    margin-top: 1.5rem;
+    color: var(--clr-primary);
+    filter: drop-shadow(2px 2px 4px var(--clr-mid-grey));
+}
+
 .yes, .cancel{ 
-    margin: 1rem 0 0 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 0.5px solid var(--clr-secondary);
+    width: 180px;
+    margin: 0.5rem;
+    padding: 0.25rem 1rem;
+    border: 0.5px solid var(--clr-primary);
     border-radius: var(--rnd-soft);
     font-family: var(--font-2);
-    /* filter: drop-shadow(2px 2px 4px var(--clr-mid-grey)); */
-    font-size: var(--font-size-xsmall);
+    font-size: var(--font-size-reg);
     text-transform: uppercase;
-    letter-spacing: var(--mid-spacing);
+    letter-spacing: var(--wide-spacing);
 }
+
+.yes{color: #fff;}
+
 .cancel:hover{
     transition: all 0.15s ease-in;
     transform: scale(0.95);
@@ -58,15 +67,15 @@
     filter: drop-shadow(2px 2px 4px var(--clr-mid-grey));
 }
 
-.yes{background-color: var(--clr-secondary);}
+.yes{background-color: var(--clr-primary);}
  
 .overlay h2{
     font-family: var(--font-2);
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-reg);
     text-transform: uppercase;
     line-height: 1.4rem;
-    margin-top: 1rem;
     color: var(--clr-dark-grey);
-    letter-spacing: var(--mid-spacing);
+    letter-spacing: var(--wide-spacing);
     text-align: center;
+    margin-bottom: 1rem;
 }

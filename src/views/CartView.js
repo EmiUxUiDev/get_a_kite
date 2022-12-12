@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
 
 
+
 export default function CartView() {
   const { cartProducts, cartTotalPrice, setDisplay} =
     useContext(CartContext);
@@ -39,7 +40,10 @@ export default function CartView() {
         </button>
         
         <Link to={"/"}>
-          <button className="back-shopping">Continue shopping</button>
+          <button className="back-shopping all-products">Continue shopping</button>
+        </Link>
+        <Link to={"/buy"}>
+          <button className="buy back-shopping">Buy it now!</button>
         </Link>
       </div>
     </Layout>

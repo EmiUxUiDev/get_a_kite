@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../styles/cart.css";
 import { CartContext } from "../context/cartContext";
 import ModalConfirmation from './ModalConfirmation'
-
+import { TbTrash } from "react-icons/tb";
 
 export default function Cart() {
   const {
@@ -24,7 +24,7 @@ export default function Cart() {
                   <p id="brand-txt">{item.brand}</p>
                 </div>
                 <div id="wrapper-model-cart">
-                  <p>{item.id}</p>
+                  <p id="id-cart">{item.id}</p>
                   <p id="model-txt">{item.model}</p>
                   <p id="available-txt">{`available ${item.stock}`}</p>
                 </div>
@@ -36,7 +36,7 @@ export default function Cart() {
                   removeItemToCart(item.id);
                 }}
               >
-                Delete
+              <i><TbTrash /></i><p>delete</p>
               </button>
             </div>
 

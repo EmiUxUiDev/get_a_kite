@@ -1,8 +1,8 @@
 article.wrapper-cart {
-  height: 100px;
+  height: 90px;
   width: 550px;
   margin: 2rem auto;
-  padding: 0.25rem;
+  padding: 0.2rem;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ div.wrapper-info-cart {
   flex-direction: row;
   justify-content: space-between;
   width: 300px;
-  height: 70px;
+  height: 60px;
   margin-right: 1rem;
   background-color: var(--clr-light-grey);
   border-radius: var(--rnd-med);
@@ -48,8 +48,13 @@ div#wrapper-model-cart {
   margin-right: 1rem;
 }
 
+#delete-btn>i svg{
+  font-size: var(--font-size-mid);
+}
+
 #delete-btn {
-  padding: 0.2rem 1.5rem;
+  width: 100px;
+  padding: 0.2rem 0.5rem;
   font-size: var(--font-size-small);
   font-family: var(--font-2);
   border: 1px solid var(--clr-mid-grey);
@@ -57,13 +62,21 @@ div#wrapper-model-cart {
   margin-right: 1rem;
   margin-top: 1rem;
   background-color: #fff;
+  color: var(--clr-dark-grey);
   letter-spacing: var(--reg-spacing);
   transition: all 100ms ease-in-out;
   text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #delete-btn:hover {
   background-color: var(--clr-dark-grey);
   color: #fff;
+}
+#delete-btn>p{
+  display: inline-block;
+
 }
 #category-txt {
   font-family: var(--font-2);
@@ -72,6 +85,10 @@ div#wrapper-model-cart {
 #brand-txt {
   font-size: var(--font-size-small);
   font-family: var(--font-2);
+}
+#id-cart{
+  font-size: var(--font-size-xsmall);
+  display: none;
 }
 #model-txt {
   font-family: var(--font-1);

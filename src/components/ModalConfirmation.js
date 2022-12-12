@@ -2,18 +2,21 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
 import "../styles/modalconfirmation.css";
+import { TbTrash } from "react-icons/tb";
 
-
-function ModalConfirmation() {
+export default function ModalConfirmation() {
   const { removeAllItems, display, setDisplay} = useContext(CartContext);
 
   return (
     <div className={!display ? "overlay hide" : "overlay"}>
+      
       <section className="wrapper-modal">
-        <h2 className="modal-tile">
-          Are you sure you want to remove all products?
-        </h2>
+      <i><TbTrash /></i>
+        
         <div className="modal-btn">
+        <h2 className="modal-tile">
+          remove all products?
+        </h2>
         <Link to={"/cart"}>
           <button
             className="yes"
@@ -21,7 +24,7 @@ function ModalConfirmation() {
               removeAllItems();
             }}
           >
-            confirm
+            yes
           </button>
         </Link>
 
@@ -36,4 +39,4 @@ function ModalConfirmation() {
   );
 }
 
-export default ModalConfirmation;
+

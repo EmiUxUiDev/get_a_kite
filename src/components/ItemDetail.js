@@ -9,7 +9,7 @@ import {toast} from 'react-toastify'
 
 export default function ItemDetail( { item }) {
 
-  const {id, category, brand, model, price, stock, path} = item[0]
+  const {id, category, brand, model, price, stock, path} = item
 console.log(item)
 
 
@@ -59,7 +59,7 @@ console.log(item)
   };
 
   const addHandler = () => {
-    if (amount <= item[0].stock) {
+    if (amount <= item.stock) {
       setAmount(amount + 1);
     } else {
       setAmount(amount);
@@ -68,7 +68,7 @@ console.log(item)
 
 
   useEffect(() => {
-    setPrice(item[0].price * amount);
+    setPrice(item.price * amount);
     console.log(priceProds);
   }, [addHandler, subHandler]);
 
@@ -81,11 +81,11 @@ console.log(item)
         <div className="wrapper-detail">
           <img
             className="img"
-            src={item[0].path}
-            alt={`${item[0].product} created by ${item[0].brand}`}
+            src={item.path}
+            alt={`${item.product} created by ${item.brand}`}
           />
           <div className="wrapper-description">
-            <article>{item[0].description}</article>
+            <article>{item.description}</article>
           </div>
         </div>
 
@@ -94,11 +94,11 @@ console.log(item)
         <div className="wrapper-content">
           <div className="wrapper-text">
             <h3>
-              {item[0].brand} {item[0].product}
+              {item.brand} {item.product}
             </h3>
-            <h2>{item[0].model}</h2>
-            <p id="text">u$s {item[0].price}</p>
-            <p id="available">{`Available: ${item[0].stock - amount}`}</p>
+            <h2>{item.model}</h2>
+            <p id="text">u$s {item.price}</p>
+            <p id="available">{`Available: ${item.stock - amount}`}</p>
           </div>
           <div>
             <Link to={"/cart"}>
@@ -133,11 +133,11 @@ console.log(item)
         <div className="wrapper-detail">
           <img
             className="img"
-            src={item[0].path}
-            alt={`${item[0].product} created by ${item[0].brand}`}
+            src={item.path}
+            alt={`${item.product} created by ${item.brand}`}
           />
           <div className="wrapper-description">
-            <article>{item[0].description}</article>
+            <article>{item.description}</article>
           </div>
         </div>
 
@@ -146,11 +146,11 @@ console.log(item)
         <div className="wrapper-content">
           <div className="wrapper-text">
             <h3>
-              {item[0].brand} {item[0].product}
+              {item.brand} {item.product}
             </h3>
-            <h2>{item[0].model}</h2>
-            <p id="text">u$s {item[0].price}</p>
-            <p id="available">{`Available: ${item[0].stock}`}</p>
+            <h2>{item.model}</h2>
+            <p id="text">u$s {item.price}</p>
+            <p id="available">{`Available: ${item.stock}`}</p>
           </div>
           <Counter
             item={item}

@@ -6,6 +6,7 @@ import SubCategoryView from "../views/SubCategoryView";
 import ItemView from "../views/Item";
 import CartView from "../views/CartView"
 import ErrorView from "../views/ErrorView";
+import BuyItNow from "../views/BuyItNow";
 
 export const routing = createBrowserRouter([
     
@@ -36,8 +37,12 @@ export const routing = createBrowserRouter([
         element: <CartView />,
     },
     {
+        path: "/buy",
+        element: <BuyItNow />,
+    },
+    {
         path: "*",
         element: <ErrorView />,
-    },
+    }
     
 ])

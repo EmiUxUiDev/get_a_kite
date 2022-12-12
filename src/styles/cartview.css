@@ -21,7 +21,6 @@ h2#category-title-dark {
   background: linear-gradient(to left, #ffffff00, 30%, rgba(0, 0, 0, 0.15));
 }
 .back-shopping {
-  margin-left: 44%;
   margin-bottom: 1rem;
   margin-top: 1rem;
   padding: 0.4rem 1rem;
@@ -45,7 +44,6 @@ h2#category-title-dark {
 }
 
 .wrapper-btn-cart button {
-  margin: 1rem auto;
   width: 320px;
 }
 
@@ -82,12 +80,13 @@ h2#category-title-dark {
     background-color: var(--clr-secondary);
     padding: 0.15rem 0.5rem;
     border-radius: var(--rnd-soft);
+    text-align: center;
   }
   .wrapper-btn-cart{
     margin-top: -1rem;
   }
   .wrapper-btn-cart button {
-    margin: 1rem auto;
+    /* margin: 1rem auto; */
     width: 280px;
   }
 

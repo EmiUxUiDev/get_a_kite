@@ -1,23 +1,41 @@
 import "../styles/itemlistcontainer.css";
 import kite from "../img/dice_cc01.webp";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-
+import {collection, getDocs, getFirestore} from 'firebase/firestore'
+import { TbColumnInsertLeft } from "react-icons/tb";
 
 
 export default function ItemListContainer({ user, subs }) {
   const [prods, setProds] = useState([]);
 
  
-  fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
-  .then(data=>data.json())
+  // fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
+  // .then(data=>data.json())
 
-  .then((data) => {
-    setProds(data)
-  })
+  // .then((data) => {
+  //   setProds(data)
+  // })
 
-  .catch(error=>console.error(error))
+  // .catch(error=>console.error(error))
 
+
+  //BUSCO TODOS LOS PRODUCTOS DE LA TABLA EN LA BD DE FIRESTORE
+  useEffect(()=>{
+    const db = getFirestore()
+    const allItems = collection(db, 'items')
+
+    getDocs(allItems).then((snapshot)=>{
+      const allProdsColleted = snapshot.docs.map((doc)=>
+        ({id: doc.id, ...doc.data()})
+      )
+
+      setProds(allProdsColleted)
+      console.log(allProdsColleted)
+    })
+
+  },[])
+ 
 
   return (
     <main>

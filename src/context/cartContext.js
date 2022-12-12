@@ -15,7 +15,8 @@ export const CartContextProvider = ({ children }) => {
   //State uses to display or not modal window
   const [display, setDisplay] = useState(false);
 
-  
+  //State to save purchase data
+  const [customer, setCustomer] = useState({name:"", email:"", phone:"",})
 
   //***************ADD PRODUCTS TO CART**************************
   ////////////////////////////////////////////////////////////////////////
@@ -46,7 +47,12 @@ export const CartContextProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////////////
 
   const removeItemToCart = (id) => {
-    toast.info("Removing product", {
+    //Catching the objet to remove
+    const prodSelec = cartProducts.find((i) => {
+      return i.id === id;
+    })
+
+    toast.info(`Removing ${prodSelec.qty} ${prodSelec.model}`, {
       position: "top-center",
       autoClose: 1000,
       hideProgressBar: false,
@@ -121,6 +127,8 @@ export const CartContextProvider = ({ children }) => {
         setPrice,
         display,
         setDisplay,
+        setCustomer,
+        customer
       }}
     >
       {children}

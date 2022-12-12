@@ -30,7 +30,7 @@ export default function Counter({
 
         <button
           className="add"
-          disabled={amountItems >= item[0].stock}
+          disabled={amountItems >= item.stock}
           onClick={onAddHandler}
         >
           +
