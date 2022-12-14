@@ -3,12 +3,11 @@ import kite from "../img/dice_cc01.webp";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import {collection, getDocs, getFirestore} from 'firebase/firestore'
-import { TbColumnInsertLeft } from "react-icons/tb";
-
+import Preloader from '../components/Preloader.js'
 
 export default function ItemListContainer({ user, subs }) {
   const [prods, setProds] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false)
  
   // fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
   // .then(data=>data.json())
@@ -22,6 +21,7 @@ export default function ItemListContainer({ user, subs }) {
 
   //BUSCO TODOS LOS PRODUCTOS DE LA TABLA EN LA BD DE FIRESTORE
   useEffect(()=>{
+    setIsLoading(true)
     const db = getFirestore()
     const allItems = collection(db, 'items')
 
@@ -31,14 +31,16 @@ export default function ItemListContainer({ user, subs }) {
       )
 
       setProds(allProdsColleted)
-      console.log(allProdsColleted)
     })
-
-  },[])
+    .catch(error => console.log(error))
+    setIsLoading(true)
+  },[prods])
  
 
   return (
-    <main>
+    <>
+      <Preloader visual={isLoading}/>
+      <main>
       <section className="wrapper_section">
         <div className="wrapper_img">
           <img className="main_card_img" src={kite} alt="Kite cabrinha" />
@@ -66,5 +68,6 @@ export default function ItemListContainer({ user, subs }) {
       </h3>
       <ItemList prods={prods} />
     </main>
+    </>
   );
 }

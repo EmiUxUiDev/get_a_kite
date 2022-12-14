@@ -1,0 +1,49 @@
+.preloader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+}
+div.preloader div.circle{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    filter: drop-shadow(2px 2px 2px var(--clr-dark-grey));
+    border-radius: 12px;
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    animation: wave 1.7s ease-in-out infinite
+}
+
+div.preloader div.circle:nth-child(1){
+    left: -30px;
+    animation-delay: 0s;
+}
+div.preloader div.circle:nth-child(2){
+    left: -10px;
+    animation-delay: 0.1s;
+}
+div.preloader div.circle:nth-child(3){
+    left: 10px;
+    animation-delay: 0.2s;
+}
+div.preloader div.circle:nth-child(4){
+    left: 30px;
+    animation-delay: 0.3s;
+}
+
+.display-none{
+    display: none;
+}
+
+@keyframes wave{
+    0%,
+    75%,
+    100%{
+        transform: translateY(0) scale(1);
+    }
+    25%{transform: translateY(-15px);}
+    50%{transform: translateY(15px);}
+}

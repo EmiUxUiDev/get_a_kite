@@ -128,7 +128,8 @@ export const CartContextProvider = ({ children }) => {
         display,
         setDisplay,
         setCustomer,
-        customer
+        customer,
+        setCartProducts
       }}
     >
       {children}

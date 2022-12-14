@@ -13,7 +13,7 @@ export default function CartView() {
 
   return (
     <Layout>
-      
+      <h2 id="category-title">home / cart</h2>
       <h1
         className={
           cartProducts.length === 0 ? "display-off" : "show margin-top"
@@ -43,7 +43,7 @@ export default function CartView() {
           <button className="back-shopping all-products">Continue shopping</button>
         </Link>
         <Link to={"/buy"}>
-          <button className="buy back-shopping">Buy it now!</button>
+          <button className={cartProducts.length === 0 ? "display-off" : "buy back-shopping"}>Buy it now!</button>
         </Link>
       </div>
     </Layout>

@@ -83,11 +83,11 @@ div.wrapper-buy-btn button {
   color: var(--clr-dark-grey);
 }
 
-div.wrapper-buy-btn a {
+div.wrapper-buy-btn{
   text-decoration: none;
 }
 
-div.wrapper-buy-btn a button {
+div.wrapper-buy-btn button {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -95,11 +95,15 @@ div.wrapper-buy-btn a button {
   padding-bottom: 0.1rem;
   transition: all 100ms ease-in-out;
 }
-div.wrapper-buy-btn a button:hover {
+div.wrapper-buy-btn button:hover {
   background-color: var(--clr-dark-grey);
   color: #fff;
 }
 
+div.wrapper-buy-btn button.display-off{
+  color: var(--clr-mid-grey);
+  border: 1px solid var(--clr-mid-grey);
+}
 div.wrapper-buy-btn button i {
   font-size: var(--font-size-reg);
 }

@@ -37,12 +37,10 @@ export default function Counter({
         </button>
       </div>
       <button
-        id="add-cart"
-        disabled={amountItems === 0}
+        className={item.stock === 0 ? "disabled-btn":"add-cart-btn"}
+        disabled={item.stock === 0}
         onClick={onAddItemToCartHandler}
-      >
-        <span className="add-cart">Add to cart</span>
-        <i className="cart">
+      >Add to cart<i className="cart">
           <TbShoppingCart />
         </i>
       </button>
