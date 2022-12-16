@@ -46,7 +46,7 @@ export default function ItemDetailContainer({ idDetail }) {
 
 
 
-  return item != "" ? (
+  return item !== "" ? (
     <>
     <Preloader isLoading={isLoading}/>
     <ItemDetail item={item} />

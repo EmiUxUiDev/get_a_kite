@@ -33,3 +33,16 @@ Visit your web! [F-ONE](https://www.f-one.world/)
 
 ### CABRINHA
 Visit your web! [CABRINHA](https://www.cabrinha.com/)
+
+---
+# About getAKite e-commerce
+
+This project was developed basicly using React JS but also, a small structure of HTML and native CSS, something extrange now days but useful to me, mainly because I like to create things a little more customized.
+
+if you want to visit the project, click the link below, I hope you enjoy it! 😊
+
+> [getAKite](https://resilient-cascaron-73330f.netlify.app) {:target="_blank"}
+
+If you want to send me a messege, feel free to contact me on LinkedIn
+
+> [LinkedIn](https://www.linkedin.com/in/emiliano-agu-834544226/){:target="_blank"}
