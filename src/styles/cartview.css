@@ -44,9 +44,13 @@ h2#category-title-dark {
 }
 
 .wrapper-btn-cart button {
-  width: 320px;
+  margin: 0.5rem 0.5rem;
 }
-
+ section.cartview-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 .all-products {
   color: var(--clr-dark-grey);
 }
@@ -95,6 +99,9 @@ h2#category-title-dark {
     margin-bottom: 0;
     margin-top: 1.8rem;
     padding: 0.4rem 1rem;
+  }
+  section.cartview-btn{
+    flex-direction: column;
   }
 
 }

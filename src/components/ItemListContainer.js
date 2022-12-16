@@ -5,18 +5,27 @@ import ItemList from "./ItemList";
 import {collection, getDocs, getFirestore} from 'firebase/firestore'
 import Preloader from '../components/Preloader.js'
 
-export default function ItemListContainer({ user, subs }) {
+export default function ItemListContainer({ user, year }) {
   const [prods, setProds] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
  
-  // fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
-  // .then(data=>data.json())
+  
+//  useEffect(()=>{
+//   setIsLoading(true)
+ 
+//   setTimeout(() => {
+//     fetch("https://emiuxuidev.github.io/getakite_API/kitesurfing.json")
+//     .then(data=>data.json())
+  
+//     .then((data) => {
+//       setProds(data)
+//     })
+//     .catch(error=>console.error(error))
+//     .finally(()=>setIsLoading(false))
+//   }, 3000);
 
-  // .then((data) => {
-  //   setProds(data)
-  // })
-
-  // .catch(error=>console.error(error))
+//  },[])
+  
 
 
   //BUSCO TODOS LOS PRODUCTOS DE LA TABLA EN LA BD DE FIRESTORE
@@ -33,13 +42,13 @@ export default function ItemListContainer({ user, subs }) {
       setProds(allProdsColleted)
     })
     .catch(error => console.log(error))
-    setIsLoading(true)
-  },[prods])
+    .finally(()=>{setIsLoading(false)})
+  },[])
  
 
   return (
     <>
-      <Preloader visual={isLoading}/>
+      <Preloader isLoading={isLoading}/>
       <main>
       <section className="wrapper_section">
         <div className="wrapper_img">
@@ -54,12 +63,11 @@ export default function ItemListContainer({ user, subs }) {
         </div>
         </div>
         <h4>
-          Subscription: <b className="sub-user">{subs}</b> - Hey <b className="sub-user">{user}</b>, welcome to our
-          platafform!
+          Welcome to our <b className="sub-user">{year}</b> COLLECTION - Hey <b className="sub-user">{user}, ready?!</b>, 
+        
         </h4>
         <p>
-          This's ItemListContainer. Here we're gonna to display all items that
-          will sail on this plataform.
+        Whether you prefer wave riding, big air adrenaline rush, landing your best tricks with your Twin-Tip. We have what you need.
         </p>
       </section>
       

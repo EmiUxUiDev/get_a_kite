@@ -1,5 +1,5 @@
-import React, { useContext, useState, useRef, useEffect} from "react";
-import bag from "../img/kite-travel-bags.jpg";
+import React, { useContext, useState, useRef, useEffect } from "react";
+import bag from "../img/bag.png";
 import "../styles/buyitnow.css";
 import { TbShoppingCart } from "react-icons/tb";
 import { CartContext } from "../context/cartContext";
@@ -13,8 +13,6 @@ import {
 } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
-import { toast } from "react-toastify";
-
 
 
 export default function BuyItNow() {
@@ -27,17 +25,16 @@ export default function BuyItNow() {
   } = useContext(CartContext);
 
   //VALIDAR FORM
-  const [validate, setValidate] = useState(false)
-  const [validateName, setValidateName] = useState(false)
-  const [validateEmail, setValidateEmail] = useState(false)
-  const [validatePhone, setValidatePhone] = useState(false)
+  const [validate, setValidate] = useState(false);
+  const [validateName, setValidateName] = useState(false);
+  const [validateEmail, setValidateEmail] = useState(false);
+  const [validatePhone, setValidatePhone] = useState(false);
 
   const navigateTo = useNavigate();
 
-  const txtName = useRef(null)
-  const txtEmail= useRef(null)
-  const txtPhone = useRef(null)
-
+  const txtName = useRef(null);
+  const txtEmail = useRef(null);
+  const txtPhone = useRef(null);
 
   //FUNCION CARGA DE DATOS EN BD REMOTA/FIRESTORE
   const order = () => {
@@ -79,101 +76,78 @@ export default function BuyItNow() {
     }, 500);
   };
 
-
   //VERIFICA VALIDACION DEL FORMULARIO Y HABILITA BTN SUBMIT
-  useEffect(()=>{
-    validateName && validateEmail && validatePhone ? setValidate(true) : setValidate(false);
-  },[validateName, validateEmail, validatePhone])
+  useEffect(() => {
+    validateName && validateEmail && validatePhone
+      ? setValidate(true)
+      : setValidate(false);
+  }, [validateName, validateEmail, validatePhone]);
 
   const changeHandler = (e) => {
-  
     const name = e.target.name;
     const value = e.target.value;
-    
+
     setCustomer((client) => {
       return { ...client, [name]: value };
     });
   };
 
-  const validateNameHandler = (e)=>{
-    
-    if((!e.target.value === "" || e.target.value.length > 2) && isNaN(e.target.value)){
-      console.log('Valid name') 
-      setValidateName(true)
-    }else {
-      toast.error('Write down a valid name!', {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-      txtName.current.value = ""
-      txtName.current.focus()
-      setValidateName(false)
-    }
+  const validateNameHandler = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      if (
+        (!e.target.value === "" || e.target.value.length > 2) &&
+        isNaN(e.target.value)
+      ) {
+        setValidateName(true);
+        txtEmail.current.focus();
+      }
+       else {
+        txtName.current.value = "";
+        txtName.current.focus();
+        setValidateName(false);
+      }
+    } else console.log(e.key);
   }
 
-  const validateEmailHandler = (e)=>{
-  
-    if(!e.target.value.includes("@") || e.target.value === ""){
-      toast.error('Write down a valid email!', {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-      txtEmail.current.value = ""
-      txtEmail.current.focus()
-      setValidateEmail(false)
-    }else{
-      console.log('Valid email')
-      setValidateEmail(true)
-    }
+  const validateEmailHandler = (e) => {
+    if(e.key === "Enter"){
+      e.preventDefault()
+      if (!e.target.value.includes("@") || e.target.value === "") {
+        txtEmail.current.value = "";
+        txtEmail.current.focus();
+        setValidateEmail(false);
+      } else {
+        setValidateEmail(true);
+        txtPhone.current.focus();
+      }
+    }else console.log(e.key);
   }
 
-
-  const validatePhoneHandler = (e)=>{
-    if(isNaN(e.target.value.replace(/\s+/g, '')) || e.target.value === ""){
-      toast.error('Write down a valid phone number!', {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-      txtPhone.current.value = ""
-      txtPhone.current.focus()
-      setValidatePhone(false)
-      setValidate(false)
-    }else{
-      console.log('Valid phone number')
-      setValidatePhone(true)
-    }
+  const validatePhoneHandler = (e) => {
+    if(e.key === "Enter"){
+      e.preventDefault()
+      if (isNaN(e.target.value.replace(/\s+/g, "")) || e.target.value === "") {
+        txtPhone.current.value = "";
+        txtPhone.current.focus();
+        setValidatePhone(false);
+      } else {
+        setValidatePhone(true);
+      }
+    }else console.log(e.key)
   }
 
   return (
     <Layout>
+      <h2 id="category-title">home / buy</h2>
       <div className="wrapper-buy">
-        <h2 id="category-title">home / buy</h2>
-        <div
-          className="wrapper-img-buy"
-          style={{ backgroundImage: `url(${bag})` }}
-        >
-          <p>Let's prepare your purchase!</p>
+        <div className="wrapper-img-buy">
+          <img src={bag} alt="Purchase bag"/>
+          <p id="txt-title">Let's buy it!</p>
         </div>
         <form className="wrapper-form" onSubmit={onSubmitHandler}>
           <h2>insert your data</h2>
+          <p className="small-info">*Press <strong>Enter</strong> to confirm</p>
           <div className="wrapper-inputs">
             <label for="name">Full name</label>
             <input
@@ -181,7 +155,8 @@ export default function BuyItNow() {
               id="name"
               name="name"
               maxLength="12"
-              onChange={changeHandler} onBlur={validateNameHandler}
+              onChange={changeHandler}
+              onKeyDown={validateNameHandler}
               placeholder="write your name here"
               ref={txtName}
             />
@@ -193,7 +168,7 @@ export default function BuyItNow() {
               placeholder="user123@user.com"
               name="email"
               onChange={changeHandler}
-              onBlur={validateEmailHandler}
+              onKeyDown={validateEmailHandler}
               ref={txtEmail}
             />
 
@@ -205,16 +180,24 @@ export default function BuyItNow() {
               name="phone"
               maxLength="11"
               onChange={changeHandler}
-              onBlur={validatePhoneHandler}
+              onKeyDown={validatePhoneHandler}
               ref={txtPhone}
             />
           </div>
           <div className="wrapper-buy-btn">
-              <button onClick={()=>{
-                navigateTo("/cart")
-              }}>cancel</button>
+            <button
+              onClick={() => {
+                navigateTo("/cart");
+              }}
+            >
+              cancel
+            </button>
 
-            <button type="submit" disabled={!validate } className={!validate ? "display-off":""} >
+            <button
+              type="submit"
+              disabled={!validate}
+              className={!validate ? "display-off" : ""}
+            >
               <i>
                 <TbShoppingCart />
               </i>
@@ -224,5 +207,5 @@ export default function BuyItNow() {
         </form>
       </div>
     </Layout>
-  );
+  )
 }

@@ -71,7 +71,7 @@ section.wrapper-main{
 
 button.go-to-cart{
     width: 260px;
-    padding: 0.5rem 1.8rem 0.5rem 0.7rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 0.2rem 0;
     border: 1px solid var(--clr-mid-grey);
     border-radius: var(--rnd-soft);
@@ -100,8 +100,6 @@ a.go-to-cart:hover{
 .wrapper-main .add-cart{
     font-size: var(--font-size-small);
 }
-
-
 
 #close{
     position: absolute;
@@ -179,7 +177,6 @@ a.go-to-cart:hover{
     }
 
     span.add-cart{
-        margin-left: -2rem;
         font-weight: 700;
     }
 

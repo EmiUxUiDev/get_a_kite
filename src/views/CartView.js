@@ -28,6 +28,7 @@ export default function CartView() {
           {`total price  u$S ${cartTotalPrice()}`}
         </h2>
 
+        <section className="cartview-btn">
         <button
           className={
             cartProducts.length === 0
@@ -45,6 +46,7 @@ export default function CartView() {
         <Link to={"/buy"}>
           <button className={cartProducts.length === 0 ? "display-off" : "buy back-shopping"}>Buy it now!</button>
         </Link>
+        </section>
       </div>
     </Layout>
   );

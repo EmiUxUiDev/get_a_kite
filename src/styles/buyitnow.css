@@ -1,14 +1,29 @@
 .wrapper-buy {
   width: 100%;
-  height: 100%;
-  text-align: center;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0 auto;
+}
+h2#category-title {
+  margin-left: 0;
 }
 div.wrapper-img-buy {
+  position: relative;
+}
+div.wrapper-img-buy #txt-title {
+  position: absolute;
+  top: 40%;
+  padding: 0.15rem 0 0.15rem 2rem;
+  margin-left: 3rem;
+  font-size: var(--font-size-xbig);
+  border-radius: 30px;
+  filter: drop-shadow(2px 2px 1px var(--clr-mid-grey));
+}
+div.wrapper-img-buy img {
   width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 div.wrapper-inputs > input {
   padding: 0.2rem;
@@ -18,22 +33,18 @@ div.wrapper-inputs > input {
 }
 .wrapper-buy p {
   font-size: var(--font-size-xbig);
-  position: absolute;
-  top: 48%;
-  left: 5%;
+  /* margin-top: -3rem; */
   background-color: rgba(255, 255, 255, 0.8);
   padding: 1rem;
   font-weight: bold;
   border-radius: var(--rnd-med);
 }
 .wrapper-buy .wrapper-form {
-  position: absolute;
-  top: 10%;
-  left: 45%;
-  height: 250px;
+  height: 270px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.849);
+  background-color: #02ceac6c;
   border-radius: var(--rnd-med);
+  text-align: center;
 }
 
 .wrapper-buy .wrapper-form h2 {
@@ -83,7 +94,7 @@ div.wrapper-buy-btn button {
   color: var(--clr-dark-grey);
 }
 
-div.wrapper-buy-btn{
+div.wrapper-buy-btn {
   text-decoration: none;
 }
 
@@ -100,10 +111,38 @@ div.wrapper-buy-btn button:hover {
   color: #fff;
 }
 
-div.wrapper-buy-btn button.display-off{
+div.wrapper-buy-btn button.display-off {
   color: var(--clr-mid-grey);
   border: 1px solid var(--clr-mid-grey);
 }
 div.wrapper-buy-btn button i {
   font-size: var(--font-size-reg);
+}
+p.small-info {
+  font-family: "Roboto";
+  font-size: var(--font-size-xsmall);
+  font-weight: 300;
+  letter-spacing: var(--reg-spacing);
+  color: var(--clr-dark-grey);
+  background: #fff;
+  border-radius: 0;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  padding: 0.1rem;
+}
+
+@media screen and (max-width: 560px) {
+  .wrapper-buy {
+    height: 125%;
+    flex-direction: column;
+    justify-content: center;
+    margin: -4rem auto 0 auto;
+  }
+  div.wrapper-img-buy #txt-title {
+    padding: 0.15rem 0 0.15rem 2rem;
+    margin-left: 1rem;
+    font-size: var(--font-size-big);
+    border-radius: 20px;
+  }
 }

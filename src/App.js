@@ -7,7 +7,7 @@ import def from "./img/Kiteboarding_overview.webp";
 const user = {
   id: "0",
   name: "Teacher",
-  subs: "Premium",
+  year: "2023",
 };
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
 
       <Layout>
         <div id="espacio" style={{ backgroundImage: `url(${def})` }}></div>
-        <ItemListContainer subs={user.subs} user={user.name} />
+        <ItemListContainer year={user.year} user={user.name} />
       </Layout>
     
   );
