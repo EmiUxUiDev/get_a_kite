@@ -41,8 +41,8 @@ This project was developed basicly using React JS but also, a small structure of
 
 if you want to visit the project, click the link below, I hope you enjoy it! 😊
 
-> [getAKite](https://resilient-cascaron-73330f.netlify.app) {:target="_blank"}
+> [getAKite](https://resilient-cascaron-73330f.netlify.app)
 
 If you want to send me a messege, feel free to contact me on LinkedIn
 
-> [LinkedIn](https://www.linkedin.com/in/emiliano-agu-834544226/){:target="_blank"}
+> [LinkedIn](https://www.linkedin.com/in/emiliano-agu-834544226/)
