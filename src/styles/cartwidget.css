@@ -45,3 +45,9 @@ button.display{
     color: var(--clr-secondary);
     transition: ease-in-out 0.8s;
 }
+
+@media screen and (max-width: 560px){
+    button.display{
+        margin-left: 9.7rem;
+    }
+}

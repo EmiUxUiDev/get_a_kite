@@ -35,6 +35,7 @@ export default function BuyItNow() {
   const txtName = useRef(null);
   const txtEmail = useRef(null);
   const txtPhone = useRef(null);
+  const subminBtn = useRef(null);
 
   //FUNCION CARGA DE DATOS EN BD REMOTA/FIRESTORE
   const order = () => {
@@ -133,6 +134,7 @@ export default function BuyItNow() {
         setValidatePhone(false);
       } else {
         setValidatePhone(true);
+        subminBtn.current.focus();
       }
     }else console.log(e.key)
   }
@@ -195,6 +197,7 @@ export default function BuyItNow() {
 
             <button
               type="submit"
+              ref={subminBtn}
               disabled={!validate}
               className={!validate ? "display-off" : ""}
             >

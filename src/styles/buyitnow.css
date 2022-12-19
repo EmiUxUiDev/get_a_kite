@@ -134,10 +134,11 @@ p.small-info {
 
 @media screen and (max-width: 560px) {
   .wrapper-buy {
-    height: 125%;
+    height: 90%;
     flex-direction: column;
     justify-content: center;
-    margin: -4rem auto 0 auto;
+    align-items: center;
+    margin: 0 auto;
   }
   div.wrapper-img-buy #txt-title {
     padding: 0.15rem 0 0.15rem 2rem;
@@ -145,4 +146,5 @@ p.small-info {
     font-size: var(--font-size-big);
     border-radius: 20px;
   }
+
 }

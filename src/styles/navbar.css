@@ -124,6 +124,18 @@ nav li a{
     transition: ease-in 0.2s;
 }
 
+.hamburger{
+    display: none;
+}
+
+spam.bar{
+    display: block;
+    width: 20px;
+    height: 2.5px;
+    border-radius: 2px;
+    margin: 3px auto;
+    background-color: var(--clr-primary);
+}
 
 @media screen and (max-width: 560px){
     .wrapper_logo{
@@ -141,7 +153,6 @@ nav li a{
     nav li a{
         margin: 0.05rem 0.25rem;
         padding: 0.5rem;
-        font-size: var(--font-size-xsmall);
         font-weight: 500;
         cursor: pointer;
         letter-spacing: 2px;
@@ -149,10 +160,40 @@ nav li a{
     }
 
     #sub_kite, #sub_board{
-        margin-top: 0.5rem;
+        margin-top: -1.5rem;
+        margin-left: 5rem;
         border-radius: var(--rnd-soft);
     }
     #sub_kite > li a, #sub_board > li a{
         font-size: var(--font-size-small);
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    #first_ul{
+        width: 100%;
+        position: fixed;
+        top: 42px;
+        flex-direction: column; 
+        background-color: var(--clr-secondary);
+        left: 0;
+        transform: translateX(-100vh);
+        transition: all 0.6s;
+        z-index: -1;
+    }
+
+    #first_ul>li{
+        margin: 0.8rem 0;
+    }
+
+    #first_ul.responsive_nav{
+        transform: translateX(0);
+    }
+   
+    .hamburger{cursor: pointer;}
+    .cart-icon{
+        margin-right: -10rem;
     }
 }

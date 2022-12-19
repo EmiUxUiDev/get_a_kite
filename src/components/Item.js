@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import "../styles/item.css";
-import { TbTruckDelivery } from "react-icons/tb";
+import { TbTruckDelivery, TbHeart } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
 
@@ -10,6 +10,7 @@ export default function Item({ kiteboard, index }) {
   
   return kiteboard.price >= 1001 ? (
     <li id="item_wrapper" key={index}>
+      <i className="favorite"><TbHeart /></i>
       <Link to={`/item/${kiteboard.id}`}>
         <img
           className="item_img"
@@ -35,6 +36,7 @@ export default function Item({ kiteboard, index }) {
     </li>
   ) : (
     <li id="item_wrapper" key={index}>
+      <i className="favorite"><TbHeart /></i>
       <Link to={`/item/${kiteboard.id}`}>
         <img
           className="item_img"

@@ -2,8 +2,16 @@ import CartWidget from "./CartWidget";
 import "../styles/navbar.css";
 import logo125 from "../img/logo125.png";
 import { Link } from "react-router-dom";
+import { useRef } from 'react'
 
 export default function Navbar() {
+  const navRef = useRef()
+
+  const showNavbar = ()=>{
+    console.log('Click en menu icon')
+    navRef.current.classList.toggle("responsive_nav")
+  }
+
   return (
     <header>
       <nav className="wrapper">
@@ -14,12 +22,12 @@ export default function Navbar() {
           </p>
         </Link>
 
-        <ul id="first_ul">
+        <ul id="first_ul" className="" ref={navRef}>
           <li id="wrapper_kite">
             <Link className="first" to={"/category/kite"}>
               KITES
             </Link>
-            <ul id="sub_kite">
+            <ul id="sub_kite" ref={navRef}>
               <li>
                 <Link to={"/category/kite/Freestyle"}>Freestyle</Link>
               </li>
@@ -38,7 +46,7 @@ export default function Navbar() {
             <Link className="first" to={"/category/board"}>
               BOARDS
             </Link>
-            <ul id="sub_board">
+            <ul id="sub_board" ref={navRef}>
               <li>
               <Link to={"/category/board/Freestyle"}>Freestyle</Link>
               </li>
@@ -64,7 +72,12 @@ export default function Navbar() {
             </Link>{" "}
           </li>
         </ul>
-        <CartWidget />
+        <i className="cart-icon"><CartWidget /></i>
+        <div className="hamburger" onClick={showNavbar}>
+            <spam className="bar"></spam>
+            <spam className="bar"></spam>
+            <spam className="bar"></spam>
+        </div>
       </nav>
     </header>
   );
