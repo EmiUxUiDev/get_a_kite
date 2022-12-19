@@ -2,15 +2,17 @@ import CartWidget from "./CartWidget";
 import "../styles/navbar.css";
 import logo125 from "../img/logo125.png";
 import { Link } from "react-router-dom";
-import { useRef } from 'react'
+import { useRef } from "react";
+import Favorite from "./Favorite";
+
 
 export default function Navbar() {
-  const navRef = useRef()
+  const navRef = useRef();
 
-  const showNavbar = ()=>{
-    console.log('Click en menu icon')
-    navRef.current.classList.toggle("responsive_nav")
-  }
+  const showNavbar = () => {
+    console.log("Click en menu icon");
+    navRef.current.classList.toggle("responsive_nav");
+  };
 
   return (
     <header>
@@ -32,13 +34,13 @@ export default function Navbar() {
                 <Link to={"/category/kite/Freestyle"}>Freestyle</Link>
               </li>
               <li>
-              <Link to={"/category/kite/Big air"}>Big air</Link>
+                <Link to={"/category/kite/Big air"}>Big air</Link>
               </li>
               <li>
-              <Link to={"/category/kite/Freeride"}>Freeride</Link>
+                <Link to={"/category/kite/Freeride"}>Freeride</Link>
               </li>
               <li>
-              <Link to={"/category/kite/Speed"}>Speed</Link>
+                <Link to={"/category/kite/Speed"}>Speed</Link>
               </li>
             </ul>
           </li>
@@ -48,16 +50,16 @@ export default function Navbar() {
             </Link>
             <ul id="sub_board" ref={navRef}>
               <li>
-              <Link to={"/category/board/Freestyle"}>Freestyle</Link>
+                <Link to={"/category/board/Freestyle"}>Freestyle</Link>
               </li>
               <li>
-              <Link to={"/category/board/Freeride"}>Freeride</Link>
+                <Link to={"/category/board/Freeride"}>Freeride</Link>
               </li>
               <li>
-              <Link to={"/category/board/Surfing"}>Surfing</Link>
+                <Link to={"/category/board/Surfing"}>Surfing</Link>
               </li>
               <li>
-              <Link to={"/category/board/Foil"}>Foil</Link>
+                <Link to={"/category/board/Foil"}>Foil</Link>
               </li>
             </ul>
           </li>
@@ -72,11 +74,14 @@ export default function Navbar() {
             </Link>{" "}
           </li>
         </ul>
-        <i className="cart-icon"><CartWidget /></i>
+        <Favorite />
+        <i className="cart-icon">
+          <CartWidget />
+        </i>
         <div className="hamburger" onClick={showNavbar}>
-            <spam className="bar"></spam>
-            <spam className="bar"></spam>
-            <spam className="bar"></spam>
+          <spam className="bar"></spam>
+          <spam className="bar"></spam>
+          <spam className="bar"></spam>
         </div>
       </nav>
     </header>

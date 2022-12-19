@@ -1,16 +1,20 @@
-import React, {useContext} from "react";
+import React from "react";
 import "../styles/item.css";
-import { TbTruckDelivery, TbHeart } from "react-icons/tb";
+import { TbTruckDelivery} from "react-icons/tb";
+import { BsHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/cartContext";
+import { useRef } from 'react'
 
 export default function Item({ kiteboard, index }) {
+  const favoriteRef = useRef()
 
-  const{stock} = useContext(CartContext)
+  const toggleFavoriteHandler = ()=>{
+    favoriteRef.current.classList.toggle("toggle-favorite")
+  }
   
   return kiteboard.price >= 1001 ? (
     <li id="item_wrapper" key={index}>
-      <i className="favorite"><TbHeart /></i>
+      <div className="favorite" onClick={toggleFavoriteHandler} ref={favoriteRef}><i><BsHeartFill /></i></div>
       <Link to={`/item/${kiteboard.id}`}>
         <img
           className="item_img"
@@ -36,7 +40,7 @@ export default function Item({ kiteboard, index }) {
     </li>
   ) : (
     <li id="item_wrapper" key={index}>
-      <i className="favorite"><TbHeart /></i>
+      <div className="favorite" onClick={toggleFavoriteHandler} ref={favoriteRef}><i><BsHeartFill /></i></div>
       <Link to={`/item/${kiteboard.id}`}>
         <img
           className="item_img"

@@ -1,0 +1,14 @@
+.wrapper-heart{margin-top: 6px;}
+
+.wrapper-heart>i{
+    color: crimson;
+    opacity:0.1;
+}
+
+
+@media screen and (max-width: 560px){
+    .wrapper-heart{
+        margin-right: -8rem;
+    }
+    
+}
