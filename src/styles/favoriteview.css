@@ -1,0 +1,11 @@
+article.wrapper-favorite{
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.8rem auto;
+}
+
+img.img-favorite{
+    width: 60px;
+}

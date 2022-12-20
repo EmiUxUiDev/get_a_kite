@@ -4,12 +4,18 @@ import { TbTruckDelivery} from "react-icons/tb";
 import { BsHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useRef } from 'react'
+import { FavoriteContext } from "../context/favoriteContext";
+import { useContext } from "react";
 
 export default function Item({ kiteboard, index }) {
   const favoriteRef = useRef()
+  const {addFavorite} = useContext(FavoriteContext)
 
   const toggleFavoriteHandler = ()=>{
     favoriteRef.current.classList.toggle("toggle-favorite")
+    console.log(kiteboard);
+    addFavorite(kiteboard)
+
   }
   
   return kiteboard.price >= 1001 ? (

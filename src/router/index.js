@@ -7,6 +7,7 @@ import ItemView from "../views/Item";
 import CartView from "../views/CartView"
 import ErrorView from "../views/ErrorView";
 import BuyItNow from "../views/BuyItNow";
+import FavoritesView from "../views/FavoritesView";
 
 export const routing = createBrowserRouter([
     
@@ -39,6 +40,10 @@ export const routing = createBrowserRouter([
     {
         path: "/buy",
         element: <BuyItNow />,
+    },
+    {
+        path: "/favorites",
+        element: <FavoritesView />,
     },
     {
         path: "*",

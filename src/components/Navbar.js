@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Favorite from "./Favorite";
 
-
 export default function Navbar() {
   const navRef = useRef();
 
@@ -74,7 +73,9 @@ export default function Navbar() {
             </Link>{" "}
           </li>
         </ul>
-        <Favorite />
+        <Link to={"/favorites"}>
+          <Favorite />
+        </Link>
         <i className="cart-icon">
           <CartWidget />
         </i>

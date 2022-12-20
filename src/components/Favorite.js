@@ -4,7 +4,7 @@ import '../styles/favorite.css'
 
 export default function Favorite() {
   return (
-    <div className="wrapper-heart">
+    <div className="wrapper-heart" >
       <i><BsHeartFill /></i>
     </div>
   )

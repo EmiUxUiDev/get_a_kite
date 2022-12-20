@@ -20,7 +20,7 @@ console.log(item)
   const [amount, setAmount] = useState(1);
 
   //Traigo lo que necesito del contexto
-  const { cartProducts, addItemToCart, setPrice, priceProds } = useContext(CartContext);
+  const { addItemToCart, setPrice, priceProds } = useContext(CartContext);
 
 
     const addToCart = () => {
