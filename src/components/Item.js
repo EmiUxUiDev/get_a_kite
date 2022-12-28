@@ -1,23 +1,41 @@
 import React from "react";
 import "../styles/item.css";
 import { TbTruckDelivery} from "react-icons/tb";
-import { BsHeartFill } from "react-icons/bs";
+import { BsHeartFill} from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useRef } from 'react'
 import { FavoriteContext } from "../context/favoriteContext";
 import { useContext } from "react";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+} from "firebase/firestore";
 
 export default function Item({ kiteboard, index }) {
   const favoriteRef = useRef()
-  const {addFavorite} = useContext(FavoriteContext)
+  const {addFavorite, favoriteProducts} = useContext(FavoriteContext)
 
   const toggleFavoriteHandler = ()=>{
     favoriteRef.current.classList.toggle("toggle-favorite")
-    console.log(kiteboard);
     addFavorite(kiteboard)
+    favorite()
+} 
 
-  }
-  
+// CARGA DE DATOS EN BD REMOTA/FIRESTORE
+const favorite = () => {
+  //Base de datos
+  const db = getFirestore();
+  //Coleccion de la bd dnd voy a guardar
+  const favoritesCollection = collection(db, "favorites");
+  //Datos que voy a guardar
+  console.log(favoriteProducts);
+  addDoc(favoritesCollection, {
+    favorites: favoriteProducts,
+  })
+}
+
+
   return kiteboard.price >= 1001 ? (
     <li id="item_wrapper" key={index}>
       <div className="favorite" onClick={toggleFavoriteHandler} ref={favoriteRef}><i><BsHeartFill /></i></div>

@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { useContext } from 'react'
 import { FavoriteContext } from '../context/favoriteContext'
+import { TbTrash } from "react-icons/tb";
 import '../styles/favoriteview.css'
 
 export default function FavoritesView() {
@@ -22,6 +23,7 @@ console.log(favoriteProducts)
                                 <p>{fav.model}</p>
                                 <p>{fav.price}</p>
                             </div>
+                            <button id='delete-btn'>Remove<i><TbTrash /></i></button>
                         </article>
                     </>
                 )

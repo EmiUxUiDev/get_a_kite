@@ -1,8 +1,24 @@
-.wrapper-heart{margin-top: 6px;}
+.wrapper-heart{
+    margin-top: 6px;
+    position: relative;
+}
+.favorite-false{
+    opacity: 0;
+}
 
+.favorite-true{
+    width: 8px;
+    height: 8px;
+    top: -2px;
+    left: 1rem;
+    border-radius: 5px;
+    position: absolute;
+    background-color: crimson;
+    transition: all 0.5s ease-in-out;
+}
 .wrapper-heart>i{
-    color: crimson;
-    opacity:0.1;
+    color: var(--clr-primary);
+    font-size: 1.4rem;
 }
 
 

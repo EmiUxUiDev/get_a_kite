@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import "../styles/counter.css";
-import { TbShoppingCart, TbPackage } from "react-icons/tb";
+import { TbShoppingCart } from "react-icons/tb";
 import { CartContext } from "../context/cartContext";
 
 

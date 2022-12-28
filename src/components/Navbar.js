@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Favorite from "./Favorite";
 
+
 export default function Navbar() {
   const navRef = useRef();
 
