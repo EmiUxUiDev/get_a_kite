@@ -18,6 +18,7 @@ export default function Item({ kiteboard, index }) {
 
   const toggleFavoriteHandler = ()=>{
     favoriteRef.current.classList.toggle("toggle-favorite")
+    console.log(kiteboard);
     addFavorite(kiteboard)
     favorite()
 } 

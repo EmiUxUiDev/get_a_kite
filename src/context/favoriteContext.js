@@ -11,7 +11,8 @@ export const FavoriteContextProvider = ({ children }) => {
   const addFavorite = (i) => {
     //Verifico si existen dos items iguales(true/false)
     const isInFavorite = favoriteProducts.some((item) => item.id === i.id);
-
+    console.log(isInFavorite);
+    console.log(favoriteProducts.length);
     if (isInFavorite) {
       //Si existe, recorro y elimino el producto de favorito
       setFavoriteProducts(
@@ -28,6 +29,7 @@ export const FavoriteContextProvider = ({ children }) => {
     } else {
       //Si no existe, lo agrego a favorito
       setFavoriteProducts([...favoriteProducts, i]);
+      console.log(favoriteProducts);
       setHeart(true);
     }
   };

@@ -6,7 +6,7 @@ import def from "./img/Kiteboarding_overview.webp";
 
 const user = {
   id: "0",
-  name: "Teacher",
+  name: "User",
   year: "2023",
 };
 
